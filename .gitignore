@@ -3,6 +3,9 @@
 /public/storage
 /public/css
 /public/js
+/public/dist
+/public/build
+/public/plugins
 /public/bower_components/*
 /storage/*.key
 /vendor
