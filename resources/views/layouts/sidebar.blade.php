@@ -7,8 +7,8 @@
     <div class="sidebar">
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>@lang('label.dashboard')</p>
                     </a>
@@ -46,7 +46,7 @@
                 </li>
                 <li class="nav-header">@lang('label.course')</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-file"></i>
                         <p>@lang('label.courses')</p>
                     </a>

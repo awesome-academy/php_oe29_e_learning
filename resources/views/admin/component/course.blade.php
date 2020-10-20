@@ -9,6 +9,7 @@
                         <div class="row mb-2">
                             <div class="col-sm-6">
                                 <h1>@lang('label.table')</h1>
+                                <a class="btn btn-success btn-mine" href="{{ route('courses.create') }}">Add</a>  
                             </div>
                         </div>
                     </div>
@@ -38,14 +39,17 @@
                                                 <tr>
                                                     <th>@lang('label.id')</th>
                                                     <th>@lang('label.name')</th>
-                                                    <th>@lang('label.email')</th>
-                                                    <th>@lang('label.phone')</th>
-                                                    <th>@lang('label.date')</th>
-                                                    <th>@lang('label.address')</th>
-                                                    <th>@lang('label.action')</th>
+                                                    <th>@lang('label.description')</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($courses as $key => $course)
+                                                    <tr>
+                                                        <td>{{ $key + 1 }}</td>
+                                                        <td>{{ $course->name }}</td>
+                                                        <td>{{ $course->description }}</td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
