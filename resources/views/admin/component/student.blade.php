@@ -8,7 +8,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>@lang('label.table')</h1>
+                                <h1>@lang('label.student')</h1>
                             </div>
                         </div>
                     </div>
@@ -46,6 +46,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($students as $key => $student)
+                                                    <tr>
+                                                        <td>{{ $key + 1 }}</td>
+                                                        <td>{{ $student->name }}</td>
+                                                        <td>{{ $student->email }}</td>
+                                                        <td>{{ $student->phone }}</td>
+                                                        <td>{{ $student->date_of_birth }}</td>
+                                                        <td>{{ $student->address }}</td>
+                                                        <td>
+                                                        <form action="">
+                                                            <select name="status">
+                                                                <option value="{{ config('status.user.active_number') }}">@lang('label.active')</option>
+                                                                <option value="{{ config('status.user.reject_number') }}">@lang('label.reject')</option>
+                                                                <option value="{{ config('status.user.disable_number') }}">@lang('label.disable')</option>
+                                                            </select>
+                                                        </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

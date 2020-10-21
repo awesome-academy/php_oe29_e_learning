@@ -46,6 +46,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getStatusUser()
+    {
+        return [
+            config('status.active_number') => trans('label.active'),
+            config('status.reject_number') => trans('label.reject'),
+            config('status.disable_number') => trans('label.disable'),
+        ][$this->status];
+    }
+
     public function role()
     {
         return $this->belongsTo(Role::class);
