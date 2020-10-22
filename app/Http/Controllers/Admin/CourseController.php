@@ -16,7 +16,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
+        $courses = Course::with('image')->paginate(config('paginate.course_number'));
 
         return view('admin.component.course', compact('courses'));
     }
@@ -28,7 +28,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.component.add_course');
     }
 
     /**
@@ -39,7 +39,16 @@ class CourseController extends Controller
      */
     public function store(CourseRequest $request)
     {
-        //
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $name = time() . $file->getClientOriginalName();
+            $path = public_path(config('img.img_path'));
+            $file->move($path, $name);
+        }
+        $course = Course::create($request->all());
+        $course->image()->create(['url' => $name]);
+
+        return redirect()->route('courses.index');
     }
 
     /**

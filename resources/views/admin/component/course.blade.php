@@ -34,12 +34,14 @@
                                         </div>
                                     </div>
                                     <div class="card-body table-responsive p-0">
-                                        <table class="table table-hover text-nowrap">
+                                        <table class="table table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>@lang('label.id')</th>
                                                     <th>@lang('label.name')</th>
                                                     <th>@lang('label.description')</th>
+                                                    <th>@lang('label.image')</th>
+                                                    <th class="width-img">@lang('label.action')</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -48,10 +50,20 @@
                                                         <td>{{ $key + 1 }}</td>
                                                         <td>{{ $course->name }}</td>
                                                         <td>{{ $course->description }}</td>
+                                                        <td><img src="{{ asset(config('img.img_path') . $course->image->url) }}" class="width-img"></td>
+                                                        <td>
+                                                            <a href="{{ route('courses.edit', [$course->id]) }}" type="button" class="btn btn-secondary">@lang('label.edit')</a>
+                                                            <form class="form-custom" method="post" action="{{ route('courses.destroy', [$course->id]) }}">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button class="btn btn-danger">@lang('label.delete')</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        <div class="paginate-container">{{ $courses->links() }}</div>
                                     </div>
                                 </div>
                             </div>
