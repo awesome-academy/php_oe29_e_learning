@@ -6,6 +6,7 @@
 /public/dist
 /public/build
 /public/plugins
+/public/images
 /public/bower_components/*
 /storage/*.key
 /vendor

@@ -46,7 +46,7 @@
                 </li>
                 <li class="nav-header">@lang('label.course')</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('courses.index') }}" class="nav-link active">
                         <i class="nav-icon fas fa-file"></i>
                         <p>@lang('label.courses')</p>
                     </a>
