@@ -1,0 +1,90 @@
+.footer {
+    background-color: var(--second-background-color);
+    padding: 5rem 0 5rem;
+}
+
+.layout {
+    display: flex;
+    margin: 0 5rem;
+}
+
+.layout li {
+    list-style-type: none;
+}
+
+.layout  a, p, input {
+    text-decoration: none;
+    color: rgba(255,255,255,.7);
+    font-size: 0.9rem;
+}
+
+.layout li {
+    margin: 1rem 0;
+}
+
+.info > a > img {
+    height: 3.5rem;
+}
+
+.info p {
+    line-height: 1.4rem;
+    margin: 1rem 0;
+}
+
+.info p:last-child {
+    margin-top: 3.5rem;
+}
+
+.info, .follow-us {
+    flex: 1.6;
+}
+
+.web-info, .product, .support {
+    flex: 1;
+}
+
+.web-info, .product, .support, .info, .follow-us {
+    margin-right: 2rem;
+}
+
+.layout section:last-child {
+    margin: 0;
+}
+
+h6 {
+    margin: 1.5rem 0 1.5rem;
+    font-size: 1.25rem;
+    color: var(--menu-color);
+    font-weight: 600;
+}
+
+.follow-us > input{
+    width: 100%;
+    outline: none;
+    background-color: #212121;
+    border: none;
+    border-radius: 1.25rem;
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    margin-top: 3rem;
+}
+
+.btn {
+    width: 7.5rem;
+    background: #930246;
+    letter-spacing: 0.1rem;
+    outline: none;
+    border: none;
+    line-height: 2.5rem;
+    border-radius: 1.25rem;
+    color: rgba(255,255,255,.7);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: var(--menu-color);
+    color: #930246;   
+}
