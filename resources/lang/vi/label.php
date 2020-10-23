@@ -18,4 +18,9 @@ return [
     'contact_mail' => 'Nhập email để đăng ký nhận những thông tin hữu ích về học tập từ F8',
     'enter_email' => 'Email của bạn',
     'register' => 'Đăng ký',
+    'description_banner' => 'Học lập trình với các khóa học chất lượng để đi làm!',
+    'title_banner' => 'CỘNG ĐỒNG HỌC LẬP TRÌNH MIỄN PHÍ',
+    'change_theme' => 'Giao diện sáng tối',
+    'settings' => 'Cài đặt',
+    'log_out' => 'Đăng xuất',
 ];
