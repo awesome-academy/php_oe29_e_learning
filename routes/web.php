@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::group(['namespace' => 'Admin'], function() {
     Route::resource('courses', 'CourseController');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
