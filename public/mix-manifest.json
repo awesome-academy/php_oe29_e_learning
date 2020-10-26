@@ -4,5 +4,6 @@
     "/js/script.js": "/js/script.js",
     "/js/self-script.js": "/js/self-script.js",
     "/css/style.css": "/css/style.css",
-    "/css/footer.css": "/css/footer.css"
+    "/css/footer.css": "/css/footer.css",
+    "/css/auth.css": "/css/auth.css"
 }
