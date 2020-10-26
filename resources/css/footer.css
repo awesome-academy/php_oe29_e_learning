@@ -12,7 +12,7 @@
     list-style-type: none;
 }
 
-.layout  a, p, input {
+.layout a, p, input {
     text-decoration: none;
     color: rgba(255,255,255,.7);
     font-size: 0.9rem;

@@ -14,4 +14,6 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .styles('resources/css/style.css', 'public/css/style.css')
-    .js('resources/js/script.js', 'public/js/script.js');
+    .styles('resources/css/footer.css', 'public/css/footer.css')
+    .js('resources/js/script.js', 'public/js/script.js')
+    .js('resources/js/self-script.js', 'public/js/self-script.js');

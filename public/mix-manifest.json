@@ -2,5 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/script.js": "/js/script.js",
-    "/css/style.css": "/css/style.css"
+    "/js/self-script.js": "/js/self-script.js",
+    "/css/style.css": "/css/style.css",
+    "/css/footer.css": "/css/footer.css"
 }

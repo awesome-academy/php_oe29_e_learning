@@ -18,4 +18,9 @@ return [
     'contact_mail' => 'Leave with ur email to get notification',
     'enter_email' => 'Your email...',
     'register' => 'Register',
+    'description_banner' => 'Study with hight quality',
+    'title_banner' => 'FREE EDUCATION COMMUNITY',
+    'change_theme' => 'Dark/Light Mode',
+    'settings' => 'Settings',
+    'log_out' => 'Log Out',
 ];

@@ -9,7 +9,7 @@
                         <div class="row mb-2">
                             <div class="col-sm-6">
                                 <h1>@lang('label.table')</h1>
-                                <a class="btn btn-success btn-mine" href="{{ route('courses.create') }}">Add</a>  
+                                <a class="btn btn-success btn-mine" href="{{ route('courses.create') }}">@lang('label.add')</a>  
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                                         <h3 class="card-title">@lang('label.table-name')</h3>
                                         <div class="card-tools">
                                             <div class="input-group input-group-sm">
-                                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                                <input type="text" name="table_search" class="form-control float-right" placeholder="@lang('label_search')">
 
                                                 <div class="input-group-append">
                                                     <button type="submit" class="btn btn-default">
