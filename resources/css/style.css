@@ -481,38 +481,3 @@ ul {
     font-size: 0.9rem;
     line-height: 40px;
 }
-
-.btn-mine {
-    width: 4rem;
-    margin-top: 1rem;
-}
-
-.width-img {
-    width: 250px;
-}
-
-#img-preview {
-    width: 600px;
-    display: block;
-    margin: 20px 0px;
-}
-
-.form-custom {
-    display: inline-block;
-}
-
-.paginate-container {
-    display: flex;
-    padding-top: 1rem;
-    justify-content: center;
-}
-
-.error-message {
-    color: red;
-    width: 100%;
-    font-size: 0.85rem;
-}
-
-.focus {
-    border: 1px solid red;
-}

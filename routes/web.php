@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Admin'], function() {
     Route::resource('courses', 'CourseController');
+    Route::resource('lessons', 'LessonController');
 });
 
 Auth::routes();
