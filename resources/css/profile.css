@@ -1,0 +1,216 @@
+section {
+    display: block;
+}
+
+.header-auth-profile {
+    padding: 0 16px;
+    height: 68px;
+    background: #007575;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative
+}
+
+.header-link-profile {
+    height: 40px;
+    width: 100%;
+    text-align: left;
+    max-width: 1754px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.header-link-profile .sub-link-profile {
+    width: 160px;
+}
+
+.header-link-profile .sub-link-profile > img {
+    height: 100%;
+}
+
+.btn-link {
+    color: #fff;
+    opacity: .75;
+    transition: none;
+    background: none;
+    margin: 0 24px;
+    border: 1px solid #fff;
+    appearance: auto;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all linear .3s;
+}
+
+.btn-link > span {
+    margin-left: 10px;
+}
+
+.btn-link:hover {
+    opacity: 1;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1754px;
+    margin: 0 auto;
+    display: flex;
+}
+.user-infor {
+    width: calc(100%/3);
+    /* position: fixed; */
+}
+.sidebar-infor, .header-user-detail  {
+    margin-top: 90px;
+}
+
+.user-sidebar {
+    margin: 0 24px 24px;
+    min-height: 96px;
+}
+
+.flex-link {
+    display: flex;
+}
+
+.sidebar-header {
+    text-align: left;
+}
+
+.sidebar-header > h3{
+    color: #009090;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    transition: color .15s cubic-bezier(0.2, 0.2, 0.2, 1);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sidebar-avatar {
+    width: 64px;
+    height: 64px;
+    margin-right: 12px;
+}
+
+.sidebar-avatar > img {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-nav {
+    text-align: left;
+}
+
+.sidebar-nav > li {
+    width: 100%;
+    color: #009090;
+    border-color: #009090;
+}
+
+.sidebar-nav > li a {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    text-decoration: none;
+    border-left: 4px solid #009090;
+    padding: 0 24px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+
+.header-user-detail {
+    display: flex;
+}
+
+.detail-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 24px 0 0;
+    flex-shrink: 0;
+}
+
+.detail-icon > img {
+    width: 100%;
+    height: 100%;
+}
+
+.user-detail-title {
+    text-align: left;
+}
+
+.user-detail-title > h1 {
+    font-weight: 500;
+    margin-bottom: 16px;
+    font-size: 2.8rem;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+.user-detail-title > p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+.user-detail-row {
+    text-align: left;
+}
+
+.user-detail-row > h4 {
+    margin: 6px 0;
+    font-size: .875rem;
+    font-weight: 600;
+}
+
+.user-detail-row .user-detail-link {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    transition: background-color .15s cubic-bezier(0.2, 0.2, 0.2, 1);
+    cursor: pointer;
+    width: 100%;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #333;
+}
+
+.user-detail-link .arrow-color {
+    color: #009090;
+}
+
+.user-detail-row a:first-of-type {
+    border-top: 1px solid #e5e5e5;
+}
+
+.user-detail-row .user-detail-link .detail-item span {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #333;
+    display: block;
+}
+
+.user-detail-row .user-detail-link .detail-item .detail-description {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #009090;
+}
+
+.seperate-row {
+    margin-top: 80px;
+}

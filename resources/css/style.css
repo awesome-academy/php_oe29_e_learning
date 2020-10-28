@@ -104,6 +104,19 @@ ul {
     align-items: center;
 }
 
+.action-ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-ul > li {
+    color: var(--menu-color);
+    font-size: .875rem;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
 .second-menu .info-container{
     height: 100%;
     display: flex;

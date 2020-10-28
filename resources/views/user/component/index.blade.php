@@ -25,14 +25,14 @@
                 <section class="course-container">
                     <div class="course-detail">
                         <div class="img-title">
-                            <div class="overlay-course" id="img" data-img="{{ $course->url }}"></div>
+                            <div class="overlay-course" id="img" data-img="{{ config('img.img_path') . $course->image->url }}"></div>
                         </div>
                         <div class="content">
                             <h6>{{ $course->name }}</h6>
                             <p>{{ $course->description }}</p>
                             <ul>
                                 <li>
-                                    <div class="logo-course-container"><img src="{{ asset(config('title.unnamed.png')) }}" alt=""></div>
+                                    <div class="logo-course-container"><img src="{{ asset(config('title.logo_course')) }}" alt=""></div>
                                 </li>
                                 <li class="number-students">
                                     <i class="fas fa-users"></i>
@@ -46,6 +46,7 @@
                     </div>
                 </section>
             @endforeach
+        </section>
         <section class="button-course-container">
             <div class="button">
                 <a href="#">@lang('label.all_course')</a>
