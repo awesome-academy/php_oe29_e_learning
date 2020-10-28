@@ -59,7 +59,9 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        $course->load('lessons');
+
+        return view('admin.component.show_course', compact('course'));
     }
 
     /**

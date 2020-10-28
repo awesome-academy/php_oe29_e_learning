@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .styles('resources/css/style.css', 'public/css/style.css')
+    .styles('resources/css/custom.css', 'public/css/custom.css')
     .styles('resources/css/footer.css', 'public/css/footer.css')
     .styles('resources/css/auth.css', 'public/css/auth.css')
     .styles('resources/css/profile.css', 'public/css/profile.css')
