@@ -1,0 +1,69 @@
+.btn-mine {
+    width: 4rem;
+    margin-top: 1rem;
+}
+
+.width-img {
+    width: 250px;
+}
+
+#img-preview {
+    width: 600px;
+    display: block;
+    margin: 20px 0px;
+}
+
+.form-custom {
+    display: inline-block;
+}
+
+.paginate-container {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+}
+
+.error-message {
+    color: red;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.focus {
+    border: 1px solid red;
+}
+
+.card-image-container {
+    margin-top: 0.5rem;
+    height: 400px;
+    width: 800px;
+    border: 1px solid #ccc;
+}
+
+.card-content-container {
+    width: 800px;
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 1rem;
+}
+
+.card-content-container {
+    margin-bottom: 1rem;
+}
+
+.card-image-container > img {
+    height: 100%;
+}
+
+.course-order {
+    width: 70px;
+    text-align: center;
+}
+
+#course-order-padding {
+    padding-top: 18px;
+}
+
+.fixed-width {
+    width: 30%;
+}
