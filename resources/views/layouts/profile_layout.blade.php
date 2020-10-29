@@ -13,7 +13,7 @@
             <header class="header-auth-profile">
                 <div class="header-link-profile">
                     <a href="#" class="sub-link-profile"><img src="{{ asset(config('title.logo')) }}" alt=""></a>
-                    <a href="" class="btn-link">
+                    <a href="{{ route('home') }}" class="btn-link">
                         <i class="fas fa-chevron-left"></i>
                         <span>@lang('label.back_homepage')</span>
                     </a>

@@ -22,8 +22,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::resource('lessons', 'LessonController');
 });
 
-Route::group(['namespace' => 'User'], function() {
-    Route::get('/settings', 'ProfileController@index')->name('settings');
+Route::group(['namespace' => 'User', 'prefix' => 'settings'], function() {
+    Route::get('/', 'ProfileController@index')->name('settings');
+    Route::get('email', 'ProfileController@showEmail')->name('show.email');
+    Route::get('information', 'ProfileController@showInformation')->name('show.information');
+    Route::get('localization', 'ProfileController@showLocalization')->name('show.localization');
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

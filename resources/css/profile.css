@@ -144,6 +144,7 @@ section {
 
 .user-detail-title {
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .user-detail-title > h1 {
@@ -159,6 +160,7 @@ section {
     line-height: 20px;
     font-weight: 400;
     margin: 0 0 12px;
+    word-wrap: break-word;
 }
 
 .user-detail-row {
@@ -213,4 +215,127 @@ section {
 
 .seperate-row {
     margin-top: 80px;
+}
+
+.user-detail.max-width {
+    max-width: 560px;
+}
+
+.user-detail > .change-email {
+    text-align: left;
+}
+
+.change-email > section > strong {
+    font-weight: 600;
+}
+.change-email > section > p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+.input-container {
+    margin-top: 24px;
+}
+
+.input-container > label {
+    display: block;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 700;
+    padding-bottom: 6px;
+    line-height: 18px;
+}
+
+.input-container > div > form > input {
+    height: 36px;
+    padding: 4px 12px;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    color: #333;
+    font-family: inherit;
+    transition: background-color .15s cubic-bezier(0.2, 0.2, 0.2, 1),border-color .15s cubic-bezier(0.2, 0.2, 0.2, 1);
+    width: 100%;
+}
+
+.input-container > div > input {
+    height: 36px;
+    padding: 4px 12px;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    color: #333;
+    font-family: inherit;
+    transition: background-color .15s cubic-bezier(0.2, 0.2, 0.2, 1),border-color .15s cubic-bezier(0.2, 0.2, 0.2, 1);
+    width: 100%;
+}
+
+.input-container > div > form > input::placeholder {
+    font-size: 0.85rem;
+}
+
+.btn-submit-container {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit-container > button {
+    background-size: 100% 200%;
+    background-position: 0 0;
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+    background-color: #1dbfaf;
+    background-image: linear-gradient(180deg,#1dbfaf,#1dbfaf 50%,#1dbfaf);;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px 16px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.tips-email-container {
+    margin-top: 28px;
+}
+.tips-email {
+    padding: 16px 24px;
+    background: #eff9fe;
+    display: flex;
+    border-radius: 3px;
+    margin: 0;
+    align-items: center;
+}
+
+.message-icon {
+    display: block;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin-top: -2px;
+    color: #68c3fc;
+}
+
+.message-body {
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.radio-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.radio-container > input {
+    border-radius: 16px;
+    width: 16px;
+    height: 16px;
 }
