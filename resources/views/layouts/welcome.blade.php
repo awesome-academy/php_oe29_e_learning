@@ -3,12 +3,13 @@
     <div class="header-menu" id="my-header">
         <div class="left-container">
             <div class="logo">
-                <a href="" class="link"><img src="{{ asset(config('title.logo')) }}" alt="logo" class="logo"></a>
+                <a href="{{ route('home') }}" class="link"><img src="{{ asset(config('title.logo')) }}" alt="logo" class="logo"></a>
             </div>
             <div class="first-menu">
                 <ul>
-                    <li><a href="">@lang('label.home')</a></li>
-                    <li><a href="">@lang('label.course')</a></li>
+                    <li><a href="{{ route('home') }}">@lang('label.home')</a></li>
+                    <li><a href="{{ route('courses') }}">@lang('label.course')</a></li>
+                    <li><a href="">@lang('label.mentor')</a></li>
                 </ul>
             </div>
         </div>
@@ -18,7 +19,7 @@
                     <div class="avatar">
                         <img src="{{ asset(config('title.logo')) }}" alt="logo">
                     </div>
-                    <p>@lang('label.name')</p>
+                    <p>{{ Auth::user()->name }}</p>
                 </div>
                 <div class="action-container">
                     <div><i class="fas fa-bell menu-item"></i></div>
@@ -53,7 +54,7 @@
             <h5>@lang('label.description_banner')</h5>
             <h1>@lang('label.title_banner')</h1>
             <div class="btn-course">
-                <a href="">@lang('course')</a>
+                <a href="">@lang('label.course')</a>
             </div>
         </section>
     </div>

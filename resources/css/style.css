@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #f05123;
+    --primary-color: #b4320c;
     --btn-color: #b4320c;
     --body-container-color: #202020;
     --black-color: #000;
@@ -352,6 +352,7 @@ ul {
 
 .button-course-container .button {
     display: inline-flex;
+    cursor: pointer;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -480,4 +481,68 @@ ul {
 .number-students > span{
     font-size: 0.9rem;
     line-height: 40px;
+}
+
+/******************* HOME/COURSES ***************************/
+
+.header-menu.course-menu {
+    background-color: #292929;
+    margin-top: 0;
+    position: fixed;
+}
+
+.all-course-container {
+    background-color: #202020;
+    padding: 0 5rem;
+    padding-top: 5.75rem;
+    padding-bottom: 2rem;
+}
+
+.course-main-container.course-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.course-main-container.course-row > section {
+    width: calc(100%/5);
+    margin-bottom: 30px;
+}
+
+.course-main-container.course-row > section:first-child {
+    margin: 0 0.7rem;   
+}
+
+.overlay-course.overlay-row {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% auto;
+}
+
+.menu-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+}
+
+.menu-filter li {
+    display: flex;
+    align-items: center;
+}
+
+.menu-filter li > a {
+    line-height: 30px;
+    border-radius: 15px;
+    padding: 0 14px;
+    color: #aaa;
+    margin: 0 9px 10px 9px;
+    font-size: .875rem;
+    display: inline-block;
+    transition: all ease-in-out .3s;
+}
+
+.active-menu {
+    color: #c8c3bd;
+    background: #b4320c;
 }
