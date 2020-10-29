@@ -17,11 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'Admin'], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::resource('courses', 'CourseController');
     Route::resource('lessons', 'LessonController');
 });
 
-Auth::routes();
+Route::group(['namespace' => 'User'], function() {
+    Route::get('/settings', 'ProfileController@index')->name('settings');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/courses', 'HomeController@course')->name('courses');
+
+Auth::routes();

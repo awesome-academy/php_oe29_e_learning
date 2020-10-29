@@ -14,4 +14,5 @@ return [
     'auth_google_logo' => '/images/google-svg-logo.png',
     'auth_facebook_logo' => '/images/facebook-svg-logo.png',
     'profile_icon' => '/img/icon.svg',
+    'course_number' => 4,
 ];
