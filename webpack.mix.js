@@ -18,5 +18,7 @@ mix.js('resources/js/app.js', 'public/js')
     .styles('resources/css/footer.css', 'public/css/footer.css')
     .styles('resources/css/auth.css', 'public/css/auth.css')
     .styles('resources/css/profile.css', 'public/css/profile.css')
+    .styles('resources/css/lesson.css', 'public/css/lesson.css')
     .js('resources/js/script.js', 'public/js/script.js')
+    .js('resources/js/backgroundscript.js', 'public/js/backgroundscript.js')
     .js('resources/js/self-script.js', 'public/js/self-script.js');

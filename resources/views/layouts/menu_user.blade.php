@@ -29,17 +29,20 @@
                             <label for="theme">@lang('label.change_theme')</label>
                         </li>
                         <li>
-                            <a href="{{ route('settings') }}">
+                            <a href="{{ route('settings') }}" class="flex-link-display">
                                 <div><i class="fas fa-cog"></i></div> 
                                 <p>@lang('label.settings')</p>
                             </a>
                             
                         </li>
                         <li>
-                            <a href="">
-                                <div><i class="fas fa-sign-out-alt"></i></div>
-                                <p>@lang('label.log_out')</p>
-                            </a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="btn-logout">
+                                    <div><i class="fas fa-sign-out-alt"></i></div>
+                                    <p>@lang('label.log_out')</p>
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>

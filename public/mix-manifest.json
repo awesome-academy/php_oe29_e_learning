@@ -1,11 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/backgroundscript.js": "/js/backgroundscript.js",
     "/js/script.js": "/js/script.js",
     "/js/self-script.js": "/js/self-script.js",
     "/css/style.css": "/css/style.css",
     "/css/custom.css": "/css/custom.css",
     "/css/footer.css": "/css/footer.css",
     "/css/auth.css": "/css/auth.css",
-    "/css/profile.css": "/css/profile.css"
+    "/css/profile.css": "/css/profile.css",
+    "/css/lesson.css": "/css/lesson.css"
 }

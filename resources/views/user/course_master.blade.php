@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-        <title>F8 FullStack</title>
+        <link rel="stylesheet" href="{{ asset('css/lesson.css') }}">
+        <title>@lang('label.f8')</title>
     </head>
     <body>
 
