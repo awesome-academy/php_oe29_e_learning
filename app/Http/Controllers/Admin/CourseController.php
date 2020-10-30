@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Http\Requests\CourseRequest;
+use Alert;
 
 class CourseController extends Controller
 {
@@ -72,7 +73,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return view('admin.component.edit_course', compact('course'));
     }
 
     /**
@@ -84,7 +85,19 @@ class CourseController extends Controller
      */
     public function update(CourseRequest $request, Course $course)
     {
-        //
+        $course->name = $request->name;
+        $course->description = $request->description;
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $name = time() . $file->getClientOriginalName();
+            $path = public_path(config('img.img_path'));
+            $file->move($path, $name);
+            $course->img_url = $name;
+        }
+        $course->save();
+        Alert::success(trans('label.edited_success'));
+
+        return redirect()->route('courses.index');
     }
 
     /**
@@ -95,6 +108,8 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+
+        return redirect()->route('courses.index');
     }
 }

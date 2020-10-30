@@ -23,10 +23,18 @@ class CourseRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'photo' => 'required|image',
-        ];
+        if (!$this->input("edit")) {
+            return [
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'photo' => 'required|image',
+            ];
+        } else {
+            return [
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'photo' => 'image',
+            ];
+        }
     }
 }
