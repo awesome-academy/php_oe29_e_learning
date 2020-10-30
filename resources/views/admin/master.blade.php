@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
@@ -62,5 +63,6 @@
         <script src="{{ asset('dist/js/demo.js') }}"></script>
         <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
+        <script src="{{ asset('js/dropdown.js') }}"></script>
     </body>
 </html>

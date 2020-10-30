@@ -46,9 +46,16 @@
                 </li>
                 <li class="nav-header">@lang('label.course')</li>
                 <li class="nav-item">
-                    <a href="{{ route('courses.index') }}" class="nav-link active">
+                    <a href="{{ route('courses.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>@lang('label.courses')</p>
+                    </a>
+                </li>
+                <li class="nav-header">@lang('label.lesson')</li>
+                <li class="nav-item">
+                    <a href="{{ route('lessons.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file"></i>
+                        <p>@lang('label.lessons')</p>
                     </a>
                 </li>
             </ul>
