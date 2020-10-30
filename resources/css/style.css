@@ -524,6 +524,7 @@ ul {
     align-items: center;
     justify-content: center;
     margin-bottom: 36px;
+    width: 100%;
 }
 
 .menu-filter li {
@@ -545,4 +546,27 @@ ul {
 .active-menu {
     color: #c8c3bd;
     background: #b4320c;
+}
+
+.btn-logout {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: #292929;
+}
+
+.flex-link-display {
+    display: flex;
+}
+
+.flex-link-display > p {
+    font-size: 0.875rem;
+}
+
+.btn-logout {
+    display: flex;
+}
+
+.btn-logout > p {
+    font-size: 0.875rem;
 }

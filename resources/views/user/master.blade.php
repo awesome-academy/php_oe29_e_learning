@@ -15,5 +15,6 @@
         @include('layouts.footer_user')
 
         <script type="text/javascript" src="{{ asset('js/self-script.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/backgroundscript.js') }}"></script>
     </body>
 </html>

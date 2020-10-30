@@ -15,14 +15,9 @@ function scrollFixed() {
 
 let title = document.getElementsByClassName('overlay-course');
 for (let item of title) {
-    item.style.background = `url(${item.dataset.img}) no-repeat center`;
+    item.style.background = `url(/${item.dataset.img}) no-repeat center`;
     item.style.backgroundSize = 'cover';
 }
-
-let background = document.getElementById('img-data-set');
-let container = document.getElementById('background-banner');
-container.style.background = `url(${background.dataset.background}) no-repeat`;
-container.style.backgroundSize = 'cover';
 
 let dropdown = document.getElementById('btn-dropdown');
 dropdown.onclick = function() {

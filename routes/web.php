@@ -31,6 +31,9 @@ Route::group(['namespace' => 'User', 'prefix' => 'settings'], function() {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/courses', 'HomeController@course')->name('courses');
+Route::group(['prefix' => 'courses'], function() {
+    Route::get('/', 'HomeController@course')->name('courses');
+    Route::get('/{course}', 'HomeController@showLessons')->name('course.lessons');
+});
 
 Auth::routes();
