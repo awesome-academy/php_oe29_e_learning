@@ -17,7 +17,7 @@
             @auth
                 <div class="info-container">
                     <div class="avatar">
-                        <img src="{{ asset(config('title.logo')) }}" alt="logo">
+                        <img src="{{ asset(config('title.avatar_default')) }}" alt="logo">
                     </div>
                     <p>{{ Auth::user()->name }}</p>
                 </div>
