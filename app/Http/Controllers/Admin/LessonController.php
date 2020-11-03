@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use App\Models\Course;
+use App\Http\Requests\LessonRequest;
+use App\Http\Requests\LessonStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Exception;
@@ -19,8 +21,8 @@ class LessonController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $lessons = Lesson::paginate(config('paginate.lesson_number'));
+    {   
+        $lessons = Lesson::with('course')->paginate(config('paginate.lesson_number'));
         $courses = Course::all();
 
         return view('admin.component.lessons', compact('lessons', 'courses'));
@@ -55,7 +57,7 @@ class LessonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LessonStoreRequest $request)
     {   
         DB::transaction(function() use($request) {
             try {
@@ -101,7 +103,7 @@ class LessonController extends Controller
      */
     public function edit(Lesson $lesson)
     {
-        //
+        return view('admin.component.edit_lesson', compact('lesson'));
     }
 
     /**
@@ -111,9 +113,20 @@ class LessonController extends Controller
      * @param  \App\Models\Lesson  $lesson
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lesson $lesson)
+    public function update(LessonRequest $request, Lesson $lesson)
     {
-        //
+        $success = $lesson->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'video_url' => $request->video_url,
+        ]);
+        if ($success) {
+            Alert::success(trans('label.edited_success'));
+        } else {
+            Alert::success(trans('label.edited_fail'));
+        }
+        
+        return redirect()->route('lessons.index');
     }
 
     /**
@@ -124,6 +137,13 @@ class LessonController extends Controller
      */
     public function destroy(Lesson $lesson)
     {
-        //
+        $success = $lesson->delete();
+        if ($success) {
+            Alert::success(trans('label.delete_success'));
+        } else {
+            Alert::success(trans('label.delete_fail'));
+        }
+
+        return redirect()->back();
     }
 }

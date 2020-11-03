@@ -6,6 +6,7 @@
                 <th>@lang('label.title')</th>
                 <th>@lang('label.description')</th>
                 <th>@lang('label.url')</th>
+                <th>@lang('label.course')</th>
                 <th class="width-img">@lang('label.action')</th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
                     <td>{{ $lesson->title }}</td>
                     <td>{{ $lesson->description }}</td>
                     <td>{{ $lesson->video_url }}</td>
+                    <td>{{ $lesson->course->name }}</td>
                     <td>
                         <a href="{{ route('lessons.show', [$lesson->id]) }}" type="button" class="btn btn-info">@lang('label.info')</a>
                         <a href="{{ route('lessons.edit', [$lesson->id]) }}" type="button" class="btn btn-secondary">@lang('label.edit')</a>

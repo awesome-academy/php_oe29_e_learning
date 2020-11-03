@@ -106,4 +106,10 @@ return [
     'delete' => 'Delete',
     'action' => 'Action',
     'table_name' => 'Table Name',
+    'created_success' => 'Created success',
+    'created_fail' => 'Created Fail',
+    'edited_success' => 'Edited success',
+    'edited_fail' => 'Edited fail',
+    'delete_success' => 'Delete success',
+    'delete_fail' => 'Delete failed',
 ];
