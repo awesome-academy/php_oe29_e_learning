@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Exception;
@@ -19,7 +20,23 @@ class LessonController extends Controller
      */
     public function index()
     {
-        //
+        $lessons = Lesson::paginate(config('paginate.lesson_number'));
+        $courses = Course::all();
+
+        return view('admin.component.lessons', compact('lessons', 'courses'));
+    }
+
+    public function filter($id) {
+        if ($id == config('filter.default')) {
+            $lessons = Lesson::paginate(config('paginate.lesson_number'));
+
+            return view('layouts.table', compact('lessons'));
+        } else {
+            $course = Course::findOrFail($id);
+            $lessons = Lesson::where('course_id', $course->id)->paginate(config('paginate.lesson_number'));
+
+            return view('layouts.table', compact('lessons'));
+        }
     }
 
     /**
