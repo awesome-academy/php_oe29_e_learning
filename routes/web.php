@@ -21,6 +21,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::resource('courses', 'CourseController');
     Route::resource('lessons', 'LessonController');
     Route::get('/lessons/filter/{id}', 'LessonController@filter')->name('lesson_filter');
+    Route::resource('exercises', 'ExerciseController');
 });
 
 Route::group(['namespace' => 'User', 'prefix' => 'settings'], function() {

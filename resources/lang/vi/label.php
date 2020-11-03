@@ -100,4 +100,10 @@ return [
     'vi' => 'Tiếng Việt',
     'en' => 'Tiếng Anh',
     'localization_information' => 'Ngôn ngữ đang được hoàn thiện. Hiện tại hệ thống mặc định với ngôn ngữ Tiếng Việt.',
+    'title' => 'TIêu đề',
+    'info' => 'Chi tiết',
+    'edit' => 'Sửa',
+    'delete' => 'Xóa',
+    'action' => 'Hành động',
+    'table_name' => 'Tên bảng',
 ];

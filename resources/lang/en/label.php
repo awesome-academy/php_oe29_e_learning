@@ -100,4 +100,10 @@ return [
     'vi' => 'Vietnamese',
     'en' => 'English',
     'localization_information' => 'Use Fullstack.edu.vn products with:',
+    'title' => 'Title',
+    'info' => 'Detail',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'action' => 'Action',
+    'table_name' => 'Table Name',
 ];
