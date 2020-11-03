@@ -106,4 +106,10 @@ return [
     'delete' => 'Xóa',
     'action' => 'Hành động',
     'table_name' => 'Tên bảng',
+    'created_success' => 'Tạo thành công',
+    'created_fail' => 'Tạo thất bại',
+    'edited_success' => 'Sửa thành công',
+    'edited_fail' => 'Sửa thất bại',
+    'delete_success' => 'Xóa thành công',
+    'delete_fail' => 'Xóa thất bại',
 ];
