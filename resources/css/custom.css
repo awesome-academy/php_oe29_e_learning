@@ -67,3 +67,10 @@
 .fixed-width {
     width: 30%;
 }
+
+.video-url-container {
+    width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

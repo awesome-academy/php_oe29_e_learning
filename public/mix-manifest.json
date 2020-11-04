@@ -11,5 +11,6 @@
     "/css/auth.css": "/css/auth.css",
     "/css/profile.css": "/css/profile.css",
     "/css/dropdown.css": "/css/dropdown.css",
-    "/css/lesson.css": "/css/lesson.css"
+    "/css/lesson.css": "/css/lesson.css",
+    "/css/detail.css": "/css/detail.css"
 }

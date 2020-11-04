@@ -14,8 +14,6 @@
 
         @include('layouts.menu_user')
         @yield('content')
-        @include('layouts.footer_user')
 
-        <script type="text/javascript" src="{{ asset('js/self-script.js') }}"></script>
     </body>
 </html>

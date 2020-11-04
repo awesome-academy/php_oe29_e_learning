@@ -28,7 +28,7 @@
                                     <div class="panel-collapse-body">
                                         <ul>
                                             <li>
-                                                <a href="">
+                                                <a href="{{ route('course.lesson', [$lesson->id]) }}">
                                                     <span>
                                                         <i class="fas fa-play-circle"></i>
                                                         <div>{{ $lesson->title }}</div>
@@ -44,12 +44,55 @@
                     </div>
                 </div>
             </div>
-            <div class="comment-block">
+            <div class="learn-comment-block">
                 <div class="comment-detail-row">
                     <div class="comment-content-heading">
-                        <h4>@lang('label.comment_number')</h4>
+                        <h4>{{ count($course->comments) }} @lang('label.comment_rate')</h4>
                     </div>
-                    <div class="comment-box"></div>
+                    @auth
+                        <div class="comment-user">
+                            @if (Auth::user()->image)
+                                <img src="{{ asset(config('img.img_path')) . Auth::user()->image->url }}" alt="">
+                            @else
+                                <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                            @endif
+                            <div class="text-input-comment">
+                                <form action="">
+                                    <input type="text" placeholder="@lang('label.question')">
+                                </form>
+                            </div>
+                            <div class="comment-submit">
+                                <button>@lang('label.comment_button')</button>
+                            </div>
+                        </div>
+                    @endauth
+                    <div class="comment-detail-student">
+                        @foreach ($course->comments as $key => $comment)
+                            <div class="avatar-wrap">
+                                @if ($comment->user->image)
+                                    <img src="{{ asset(config('img.img_path')) . $comment->user->image->url }}" alt="">
+                                @else
+                                    <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                                @endif
+                            </div>
+                            <div class="comment-body">
+                                <div class="comment-body-content">
+                                    <h5>{{ $comment->user->name }}</h5>
+                                    <div class="comment-body-text">
+                                        <span>{{ $comment->content }}</span>
+                                    </div>
+                                </div>
+                                <div class="comment-body-time">
+                                    <p>
+                                        <span>
+                                            <span>@lang('label.like')</span>
+                                        </span>
+                                        <span class="reply-comment">@lang('label.reply')</span>
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
@@ -70,7 +113,7 @@
                     </li>
                     <li>
                         <i class="fas fa-video"></i>
-                        <span>@lang('label.total_lessons')</span>
+                        <span>@lang('label.total_lessons', ['total' => count($course->lessons)])</span>
                     </li>
                     <li>
                         <i class="fas fa-laptop-code"></i>

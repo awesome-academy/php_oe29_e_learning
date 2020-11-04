@@ -5,7 +5,7 @@
                 <th>@lang('label.id')</th>
                 <th>@lang('label.title')</th>
                 <th>@lang('label.description')</th>
-                <th>@lang('label.url')</th>
+                <th class="video-url-container">@lang('label.url')</th>
                 <th>@lang('label.course')</th>
                 <th class="width-img">@lang('label.action')</th>
             </tr>
@@ -16,7 +16,8 @@
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $lesson->title }}</td>
                     <td>{{ $lesson->description }}</td>
-                    <td>{{ $lesson->video_url }}</td>
+                    <td >
+                        <div class="video-url-container">{{ $lesson->video_url }}</div></td>
                     <td>{{ $lesson->course->name }}</td>
                     <td>
                         <a href="{{ route('lessons.show', [$lesson->id]) }}" type="button" class="btn btn-info">@lang('label.info')</a>
