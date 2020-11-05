@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function showLessons(Course $course)
     {
-        $course->load('image', 'lessons')->get();
+        $course->load(['image', 'lessons', 'comments.user.image']);
         
         return view('user.component.lessons', compact('course'));
     }

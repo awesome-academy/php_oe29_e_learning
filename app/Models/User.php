@@ -94,4 +94,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Request::class);
     }
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }
