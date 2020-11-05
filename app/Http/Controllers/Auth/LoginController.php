@@ -38,4 +38,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectPath()
+    {
+        if (Auth::user()->role_id == config('role.admin_id')) {
+            return route('admin.dashboard');
+        }
+
+        return route('home');
+    }
 }
