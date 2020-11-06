@@ -54,6 +54,7 @@ section {
 
 .btn-link:hover {
     opacity: 1;
+    color: inherit;
 }
 
 .content-container {
@@ -338,4 +339,30 @@ section {
     border-radius: 16px;
     width: 16px;
     height: 16px;
+}
+
+.error-message {
+    color: red;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.error-focus {
+    border: 1px solid red !important;
+}
+
+.d-none {
+    display: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: inherit;
+}
+
+#img-preview {
+    display: block;
+    width: 500px;
+    margin: 1rem auto;
 }

@@ -7,7 +7,11 @@
                 <section class="user-sidebar">
                     <a href="" class="flex-link">
                         <section class="sidebar-avatar">
-                            <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                            @if ($user->image)
+                                <img src="{{ asset(config('img.img_path') . $user->image->url) }}" alt="">
+                            @else
+                                <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                            @endif
                         </section>
                         <section class="sidebar-header">
                             <h3>{{ $user->name }}</h3>
@@ -29,22 +33,49 @@
             </section>
             <section class="change-email">
                 <section>
-                    <form action="">
+                    <form action="{{ route('update', auth()->user()->id) }}" method="POST" id="update-information-form">
+                        @method('PATCH')
+                        @csrf
+                        <input type="text" class="d-none" value="{{ config('validate.update_information') }}" name="validate_rule">
                         <div class="input-container">
                             <label for="">@lang('label.full_name')</label>
                             <div>
-                                <input type="email" maxlength="50" placeholder="@lang('label.enter_full_name')" value="{{ $user->name }}">
+                                <input type="text" placeholder="@lang('label.enter_full_name')" value="{{ $user->name }}" name="name" class="@error('name') error-focus @enderror">
+                                @error('name')
+                                    <p class="error-message">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="input-container">
                             <label for="">@lang('label.date_of_birth')</label>
                             <div>
-                                <input type="text" maxlength="50" placeholder="@lang('label.enter_date')" value="{{ $user->date_of_birth }}">
+                                <input type="text" placeholder="@lang('label.enter_date')" value="{{ $user->date_of_birth }}" name="date_of_birth" class="@error('date_of_birth') error-focus @enderror">
+                                @error('date_of_birth')
+                                    <p class="error-message">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="">@lang('label.phone')</label>
+                            <div>
+                                <input type="text" placeholder="@lang('label.phone_number')" value="{{ $user->phone }}" name="phone" class="@error('phone') error-focus @enderror">
+                                @error('phone')
+                                    <p class="error-message">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="">@lang('label.address')</label>
+                            <div>
+                                <input type="text" placeholder="@lang('label.enter_address')" value="{{ $user->address }}" name="address" class="@error('address') error-focus @enderror">
+                                @error('address')
+                                    <p class="error-message">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                     </form>
                     <section class="btn-submit-container">
-                        <button>@lang('label.update')</button>
+                        <button type="submit" form="update-information-form">@lang('label.update')</button>
                     </section>
                 </section>
             </section>

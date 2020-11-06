@@ -26,10 +26,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 
 Route::group(['namespace' => 'User', 'prefix' => 'settings'], function() {
     Route::get('/', 'ProfileController@index')->name('settings');
-    Route::get('email', 'ProfileController@showEmail')->name('show.email');
-    Route::get('information', 'ProfileController@showInformation')->name('show.information');
-    Route::get('localization', 'ProfileController@showLocalization')->name('show.localization');
-
+    Route::group(['as' => 'show.'], function() {
+        Route::get('email', 'ProfileController@showEmail')->name('email');
+        Route::get('information', 'ProfileController@showInformation')->name('information');
+        Route::get('localization', 'ProfileController@showLocalization')->name('localization');
+        Route::get('github', 'ProfileController@showGithub')->name('github');
+    });
+    Route::patch('/update/{user}', 'ProfileController@update')->name('update');
+    Route::post('/avatar/{user}', 'ProfileController@postAvatar')->name('avatar.store');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
