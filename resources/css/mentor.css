@@ -1,0 +1,283 @@
+.mentor-container {
+    flex: 1;
+}
+
+.mentor-box {
+    border: 1px solid rgba(255,255,255, .3);
+    border-radius: 3px;
+    margin-bottom: 16px;
+}
+
+.mentor-heading {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255, .3);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+}
+
+.avatar-mentor-container  {
+    margin-right: 15px;
+    line-height: 1.2;
+}
+
+.sub-avatar-mentor {
+    width: 45px;
+    height: 45px;
+}
+
+.sub-avatar-mentor > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.name-mentor {
+    margin-bottom: 5px;
+    line-height: 1.2;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .01em;
+}
+
+.rate-number {
+    line-height: 1.2;
+}
+
+.mentor-description {
+    padding: 16px;
+}
+
+.mentor-description-content {
+    margin-bottom: 16px;
+}
+
+.main-information {
+    font-size: 15px;
+    color: rgb(122, 137, 148);
+}
+
+.main-information > p {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .01em;
+}
+
+.action {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 400;
+    letter-spacing: .01em;
+}
+
+.mentor-profile-button {
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    background: #b4320c;
+    padding: 6px 17px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 0px;
+    line-height: 21px;
+    border-radius: 3px;
+    outline: none;
+    border: none rgb(0, 123, 232);
+    transition: all 0.15s ease 0s;
+    color: #ccc;
+}
+
+.mentor-profile-button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.black-screen {
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.42);
+    cursor: pointer;
+    transition: 0.4s;
+    visibility: hidden;
+}
+
+.black-screen.show {
+    visibility: visible;
+}
+
+.rate-content-user {
+    width: 30%;
+    background-color: rgb(32, 32, 32);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    border-left: 1px solid rgb(122, 122, 122);
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s;
+    transform: translateX(100%);
+}
+
+.rate-content-user.move-to-left {
+    transform: translateX(0%);
+}
+
+.heading-content-rate {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 15px 0;
+}
+
+.information-mentor-rate {
+    padding: 0 15px;
+}
+
+.avatar-container-rate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.avatar-mentor-rate {
+    margin-bottom: 16px;
+    width: 128px;
+    height: 128px;
+}
+
+.avatar-mentor-rate > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.name-mentor-rate {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.mentor-number-rate {
+    margin: 0px -2px;
+    font-weight: 400;
+    letter-spacing: .01em;
+    line-height: 1.5;
+}
+
+.information-content-rate {
+    margin-bottom: 16px;
+}
+
+.information-content-rate > h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.information-content-rate > p {
+    margin-bottom: 5px;
+}
+
+.sub-separate-rate {
+    height: 1px;
+    background-color: rgb(117, 117, 117);
+    margin-bottom: 16px;
+}
+
+.comment-user-rate {
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 15px 15px;
+}
+
+.comment-user-rate > div:last-child{
+    overflow-x: hidden;
+    flex: 1;
+}
+
+.comment-user-rate > h3{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.comment-content-rate {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: .01em;
+}
+
+.avatar-content-rate {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+.avatar-content-rate > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.main-rate {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    margin-left: 8px;
+    padding-bottom: 16px;
+    padding-right: 10px;
+}
+
+.main-content-rate {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: .01em;
+}
+
+.main-content-rate .name-user-rate {
+    margin-bottom: 4px;
+    margin-top: 4px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: .01em;
+}
+
+.star-rate {
+    margin: 0px -2px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: .01em;
+    margin-right: 5px;
+}
+
+.content-student-rate {
+    font-size: 15px;
+    white-space: pre-wrap;
+}
+
+.hight-light {
+    color: rgb(255, 185, 36);
+}
+
+.remove-scroll {
+    overflow: hidden !important;
+}
+
+.cursor {
+    cursor: pointer;
+}

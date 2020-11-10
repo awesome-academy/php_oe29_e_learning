@@ -20,9 +20,11 @@ for (let item of title) {
 }
 
 let dropdown = document.getElementById('btn-dropdown');
-dropdown.onclick = function() {
-    document.getElementById("dropdown-content").classList.toggle("show");
-}
+if (dropdown) {
+    dropdown.onclick = function() {
+        document.getElementById("dropdown-content").classList.toggle("show");
+    }
+};
 
 window.onclick = function(event) {
     if (!event.target.matches('#btn-dropdown')) {

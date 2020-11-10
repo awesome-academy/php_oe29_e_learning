@@ -133,4 +133,9 @@ return [
     'user_registered' => 'Cần đăng nhập để học khóa học',
     'continue_study' => 'Học ngay',
     'knowledge' => 'Chi tiết',
+    'year_of_birth' => 'Sinh năm: :year',
+    'fake_knowledge' => 'Là 1 người tự học, mình sẽ giúp các bạn tránh phạm những sai lầm mà những người tự học thường mắc phải. Những kinh nghiệm, kỹ năng để bạn có thể hoàn thành tốt khóa học trên F8 và các code lines trong project của bạn',
+    'program_language' => 'Ngôn ngữ: PHP, JS',
+    'introduction' => 'Giới thiệu',
+    'reviews' => 'Đánh giá',
 ];
