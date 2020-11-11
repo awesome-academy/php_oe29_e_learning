@@ -138,4 +138,10 @@ return [
     'program_language' => 'Program Language: PHP, JS',
     'introduction' => 'Introduction',
     'reviews' => 'Reviews',
+    'courses' => 'All courses',
+    'lesson' => 'Lesson',
+    'lessons' => 'All lessons',
+    'exercise' => 'Exercise',
+    'exercises' => 'All exercises',
+    'mentors' => 'All mentors',
 ];

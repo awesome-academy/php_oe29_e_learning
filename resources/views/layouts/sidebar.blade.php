@@ -16,7 +16,7 @@
                 <li class="nav-header">@lang('label.student')</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                    <i class="nav-icon fas fa-users"></i>
                         <p>@lang('label.students')</p>
                     </a>
                 </li>
@@ -40,22 +40,29 @@
                 <li class="nav-header">@lang('label.mentor')</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-user-graduate"></i>
                         <p>@lang('label.mentors')</p>
                     </a>
                 </li>
                 <li class="nav-header">@lang('label.course')</li>
                 <li class="nav-item">
                     <a href="{{ route('courses.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-layer-group"></i>
                         <p>@lang('label.courses')</p>
                     </a>
                 </li>
                 <li class="nav-header">@lang('label.lesson')</li>
                 <li class="nav-item">
                     <a href="{{ route('lessons.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-tasks"></i>
                         <p>@lang('label.lessons')</p>
+                    </a>
+                </li>
+                <li class="nav-header">@lang('label.exercise')</li>
+                <li class="nav-item">
+                    <a href="{{ route('exercises.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-code"></i>
+                        <p>@lang('label.exercises')</p>
                     </a>
                 </li>
             </ul>

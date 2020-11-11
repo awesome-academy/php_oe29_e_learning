@@ -46,7 +46,7 @@
                                                             <td class="course-order"><div>{{ $lesson->course_order }}</div></td>
                                                             <td>{{ $lesson->title }}</td>
                                                             <td>{{ $lesson->description }}</td>
-                                                            <td>{{ $lesson->video_url }}</td>
+                                                            <td><div class="text-overflow">{{ $lesson->video_url }}</div></td>
                                                             <td class="remove-container"><div class="d-none">{{ $course->id }}</div></td>
                                                         </tr>
                                                     @endforeach

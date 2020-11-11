@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Exercise;
+use App\Models\Lesson;
+use App\Models\Course;
+use App\Http\Requests\ExerciseRequest;
 use Illuminate\Http\Request;
+use Alert;
 
 class ExerciseController extends Controller
 {
@@ -15,7 +19,7 @@ class ExerciseController extends Controller
      */
     public function index()
     {
-        $exercises = Exercise::paginate(config('paginate.exercise_number'));
+        $exercises = Exercise::with('lesson.course')->paginate(config('paginate.exercise_number'));
 
         return view('admin.component.exercise', compact('exercises'));
     }
@@ -27,7 +31,9 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        //
+        $lessons = Lesson::all();
+
+        return view('admin.component.add_exercise', compact('lessons'));
     }
 
     /**
@@ -36,9 +42,12 @@ class ExerciseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ExerciseRequest $request)
     {
-        //
+        Exercise::create($request->all());
+        Alert::success(trans('label.created_success'));
+
+        return redirect()->route('exercises.index');
     }
 
     /**
@@ -70,7 +79,7 @@ class ExerciseController extends Controller
      * @param  \App\Models\Exercise  $exercise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Exercise $exercise)
+    public function update(ExerciseRequest $request, Exercise $exercise)
     {
         //
     }

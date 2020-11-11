@@ -138,4 +138,10 @@ return [
     'program_language' => 'Ngôn ngữ: PHP, JS',
     'introduction' => 'Giới thiệu',
     'reviews' => 'Đánh giá',
+    'courses' => 'Danh sách khóa học',
+    'lesson' => 'Bài học',
+    'lessons' => 'Danh sách bài học',
+    'exercise' => 'Bài tập',
+    'exercises' => 'Danh sách bài tập',
+    'mentors' => 'Danh sách Mentor',
 ];

@@ -92,7 +92,7 @@ class LessonController extends Controller
      */
     public function show(Lesson $lesson)
     {
-        //
+        return view('admin.component.show_lesson', compact('lesson'));
     }
 
     /**
