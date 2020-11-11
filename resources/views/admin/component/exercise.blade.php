@@ -9,7 +9,7 @@
                         <div class="row mb-2">
                             <div class="col-sm-6">
                                 <h1>@lang('label.table')</h1>
-                                <a class="btn btn-primary btn-mine" href="{{ route('courses.create') }}">@lang('label.add')</a>  
+                                <a class="btn btn-primary btn-mine" href="{{ route('exercises.create') }}">@lang('label.add')</a>  
                             </div>
                         </div>
                     </div>
@@ -39,6 +39,8 @@
                                                     <th>@lang('label.id')</th>
                                                     <th>@lang('label.title')</th>
                                                     <th>@lang('label.url')</th>
+                                                    <th>@lang('label.lesson')</th>
+                                                    <th>@lang('label.course')</th>
                                                     <th class="width-img">@lang('label.action')</th>
                                                 </tr>
                                             </thead>
@@ -47,9 +49,11 @@
                                                     <tr>
                                                         <td>{{ $key + 1 }}</td>
                                                         <td>{{ $exercise->title }}</td>
-                                                        <td>{{ $exercise->url }}</td>
+                                                        <td><div class="text-overflow">{{ $exercise->url }}</div></td>
+                                                        <td>{{ $exercise->lesson->title }}</td>
+                                                        <td>{{ $exercise->lesson->course->name }}</td>
                                                         <td>
-                                                            <a href="{{ route('exercises.show', [$exercise->id]) }}" type="button" class="btn btn-info">@lang('label.info')</a>
+                                                            <a href="{{ $exercise->url }}" type="button" class="btn btn-info">@lang('label.info')</a>
                                                             <a href="{{ route('exercises.edit', [$exercise->id]) }}" type="button" class="btn btn-secondary">@lang('label.edit')</a>
                                                             <form class="form-custom" method="post" action="{{ route('exercises.destroy', [$exercise->id]) }}">
                                                                 @csrf

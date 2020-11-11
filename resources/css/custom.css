@@ -74,3 +74,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 350px;
+}
+
+.iframe-show-lesson > iframe {
+    width: 100%;
+    height: 100%;
+}
