@@ -39,6 +39,7 @@ Route::group(['prefix' => 'mentors'], function() {
 Route::group(['prefix' => 'courses'], function() {
     Route::group(['namespace' => 'User'], function() {
         Route::get('/lesson/{id}', 'StudentController@showLesson')->name('course.lesson');
+        Route::post('/comment/{course}', 'StudentController@storeCourseComment')->name('course.comment');
     });
     Route::get('/', 'HomeController@course')->name('courses');
     Route::get('/{course}', 'HomeController@showLessons')->name('course.lessons');

@@ -52,25 +52,29 @@
                     @auth
                         <div class="comment-user">
                             @if (Auth::user()->image)
-                                <img src="{{ asset(config('img.img_path')) . Auth::user()->image->url }}" alt="">
+                                <img src="{{ asset(config('img.img_path') . Auth::user()->image->url) }}" alt="">
                             @else
                                 <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                             @endif
                             <div class="text-input-comment">
-                                <form action="">
-                                    <input type="text" placeholder="@lang('label.question')">
+                                <form action="{{ route('course.comment', [$course->id]) }}" method="POST" id="comment-form">
+                                    @csrf
+                                    <input type="text" placeholder="@lang('label.question')" name="content">
+                                    @error('content')
+                                        <p class="error-message">{{ $message }}</p>
+                                    @enderror
                                 </form>
                             </div>
                             <div class="comment-submit">
-                                <button>@lang('label.comment_button')</button>
+                                <button type="submit" form="comment-form">@lang('label.comment_button')</button>
                             </div>
                         </div>
                     @endauth
-                    <div class="comment-detail-student">
-                        @foreach ($course->comments as $key => $comment)
+                    @foreach ($course->comments as $comment)
+                        <div class="comment-detail-student">                        
                             <div class="avatar-wrap">
                                 @if ($comment->user->image)
-                                    <img src="{{ asset(config('img.img_path')) . $comment->user->image->url }}" alt="">
+                                    <img src="{{ asset(config('img.img_path'). $comment->user->image->url) }}" alt="">
                                 @else
                                     <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                                 @endif
@@ -91,8 +95,8 @@
                                     </p>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
