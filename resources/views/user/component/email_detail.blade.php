@@ -7,7 +7,11 @@
                 <section class="user-sidebar">
                     <a href="" class="flex-link">
                         <section class="sidebar-avatar">
-                            <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                            @if ($user->image)
+                                <img src="{{ asset(config('img.img_path') . $user->image->url) }}" alt="">
+                            @else
+                                <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                            @endif
                         </section>
                         <section class="sidebar-header">
                             <h3>{{ $user->name }}</h3>

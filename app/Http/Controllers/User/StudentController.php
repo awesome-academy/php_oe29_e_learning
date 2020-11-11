@@ -30,10 +30,22 @@ class StudentController extends Controller
     {
         $course->comments()->create([
             'content' => $request->content, 
-            'user_id' => Auth::user()->id, 
+            'user_id' => Auth::id(), 
+            'rate' => config('rate.default'),
+        ]);
+
+        return redirect()->route('course.lesson', [$lesson->id]);
+    }
+    
+    public function storeLessonComment(StoreCommentRequest $request, Lesson $lesson)
+    {
+        $lesson->comments()->create([
+            'content' => $request->content, 
+            'user_id' => Auth::id(), 
             'rate' => config('rate.default'),
         ]);
 
         return redirect()->route('course.lessons', [$course->id]);
+        
     }
 }
