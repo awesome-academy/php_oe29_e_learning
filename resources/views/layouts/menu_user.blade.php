@@ -15,7 +15,11 @@
         @auth
             <div class="info-container">
                 <div class="avatar">
-                    <img src="{{ asset(config('title.avatar_default')) }}" alt="logo">
+                    @if (Auth::user()->image)
+                        <img src="{{ asset(config('img.img_path') . Auth::user()->image->url) }}" alt="">
+                    @else
+                        <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                    @endif
                 </div>
                 <p>{{ Auth::user()->name }}</p>
             </div>
