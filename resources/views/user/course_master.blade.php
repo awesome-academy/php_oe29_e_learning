@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
         <link rel="stylesheet" href="{{ asset('css/lesson.css') }}">
         <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mentor.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/scrollbar.css') }}">
         <title>@lang('label.f8')</title>
     </head>
     <body>
@@ -17,5 +19,6 @@
         @include('layouts.footer_user')
 
         <script type="text/javascript" src="{{ asset('js/self-script.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/mentorscript.js') }}"></script>
     </body>
 </html>

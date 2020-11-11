@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\User;
 use Auth;
 
 class HomeController extends Controller
@@ -32,5 +33,21 @@ class HomeController extends Controller
         $course->load(['image', 'lessons', 'comments.user.image']);
         
         return view('user.component.lessons', compact('course'));
+    }
+
+    public function showMentors()
+    {   
+        $mentors = User::with('mentorComments.user.image', 'image')->where('role_id', config('role.mentor_id'))->get();
+        foreach ($mentors as $mentor) {
+            $rate = config('rate.default');
+            foreach ($mentor->mentorComments as $comment) {
+                $rate += $comment->rate;
+            }
+            if ($rate) {
+                $mentor->rate = floor($rate/($mentor->mentorComments->count()));
+            }
+        }
+
+        return view('user.component.mentor', compact('mentors'));
     }
 }

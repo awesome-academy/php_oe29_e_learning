@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/js/backgroundscript.js": "/js/backgroundscript.js",
     "/js/dropdown.js": "/js/dropdown.js",
+    "/js/mentorscript.js": "/js/mentorscript.js",
     "/js/script.js": "/js/script.js",
     "/js/self-script.js": "/js/self-script.js",
     "/css/style.css": "/css/style.css",
@@ -12,5 +13,7 @@
     "/css/profile.css": "/css/profile.css",
     "/css/dropdown.css": "/css/dropdown.css",
     "/css/lesson.css": "/css/lesson.css",
-    "/css/detail.css": "/css/detail.css"
+    "/css/detail.css": "/css/detail.css",
+    "/css/mentor.css": "/css/mentor.css",
+    "/css/scrollbar.css": "/css/scrollbar.css"
 }

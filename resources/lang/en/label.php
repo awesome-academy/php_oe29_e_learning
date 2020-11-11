@@ -133,4 +133,9 @@ return [
     'user_registered' => 'Sign in to learn the course',
     'continue_study' => 'Study now',
     'knowledge' => 'Detail',
+    'year_of_birth' => 'Year of birth: :year',
+    'fake_knowledge' => 'As a self-taught, I will help you avoid the mistakes that self-learners often make. The experience and skills for you to complete the course well on F8 and the lines of code in your project',
+    'program_language' => 'Program Language: PHP, JS',
+    'introduction' => 'Introduction',
+    'reviews' => 'Reviews',
 ];

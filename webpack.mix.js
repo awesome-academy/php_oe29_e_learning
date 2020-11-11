@@ -21,7 +21,10 @@ mix.js('resources/js/app.js', 'public/js')
     .styles('resources/css/dropdown.css', 'public/css/dropdown.css')
     .styles('resources/css/lesson.css', 'public/css/lesson.css')
     .styles('resources/css/detail.css', 'public/css/detail.css')
+    .styles('resources/css/mentor.css', 'public/css/mentor.css')
+    .styles('resources/css/scrollbar.css', 'public/css/scrollbar.css')
     .js('resources/js/script.js', 'public/js/script.js')
     .js('resources/js/backgroundscript.js', 'public/js/backgroundscript.js')
     .js('resources/js/dropdown.js', 'public/js/dropdown.js')
-    .js('resources/js/self-script.js', 'public/js/self-script.js');
+    .js('resources/js/self-script.js', 'public/js/self-script.js')
+    .js('resources/js/mentorscript.js', 'public/js/mentorscript.js');
