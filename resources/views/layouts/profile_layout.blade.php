@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
         <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
         <title>@lang('label.profile')</title>
@@ -23,5 +24,11 @@
             @yield('content')
 
         </section>
+        @include('sweetalert::alert')
+
+        <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('js/preview.js') }}"></script>
     </body>
 </html>

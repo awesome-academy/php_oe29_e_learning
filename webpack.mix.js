@@ -27,4 +27,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/backgroundscript.js', 'public/js/backgroundscript.js')
     .js('resources/js/dropdown.js', 'public/js/dropdown.js')
     .js('resources/js/self-script.js', 'public/js/self-script.js')
-    .js('resources/js/mentorscript.js', 'public/js/mentorscript.js');
+    .js('resources/js/mentorscript.js', 'public/js/mentorscript.js')
+    .js('resources/js/preview.js', 'public/js/preview.js');
