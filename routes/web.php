@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
     Route::get('/lessons/filter/{id}', 'LessonController@filter')->name('lesson_filter');
+    Route::group(['as' => 'students.'], function() {
+        Route::get('/', 'StudentController@index')->name('index');
+        Route::get('/students/exercises', 'StudentController@exercises')->name('exercises');
+    });
     Route::resource('courses', 'CourseController');
     Route::resource('lessons', 'LessonController');
     Route::resource('exercises', 'ExerciseController');

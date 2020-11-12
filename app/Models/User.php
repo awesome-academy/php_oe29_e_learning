@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function exercises()
     {
-        return $this->belongsToMany(Exercise::class, 'exercise_user')->withPivot('status');
+        return $this->belongsToMany(Exercise::class, 'exercise_user')->withPivot('status', 'submit_url');
     }
 
     public function comments()
