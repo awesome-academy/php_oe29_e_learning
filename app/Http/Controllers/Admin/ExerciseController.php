@@ -69,7 +69,10 @@ class ExerciseController extends Controller
      */
     public function edit(Exercise $exercise)
     {
-        //
+        $exercise->load('lesson');
+        $lessons = Lesson::all();
+
+        return view('admin.component.edit_exercise', compact('exercise', 'lessons'));
     }
 
     /**
@@ -81,7 +84,14 @@ class ExerciseController extends Controller
      */
     public function update(ExerciseRequest $request, Exercise $exercise)
     {
-        //
+        $success = $exercise->update($request->all());
+        if ($success) {
+            Alert::success(trans('label.edited_success'));
+        } else {
+            Alert::success(trans('label.edited_fail'));
+        }
+        
+        return redirect()->route('exercises.index');
     }
 
     /**
@@ -92,6 +102,13 @@ class ExerciseController extends Controller
      */
     public function destroy(Exercise $exercise)
     {
-        //
+        $success = $exercise->delete();
+        if ($success) {
+            Alert::success(trans('label.delete_success'));
+        } else {
+            Alert::success(trans('label.delete_fail'));
+        }
+
+        return redirect()->back();
     }
 }

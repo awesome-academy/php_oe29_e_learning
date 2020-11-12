@@ -7,7 +7,7 @@
             <ul>
                 <li><a href="{{ route('home') }}">@lang('label.home')</a></li>
                 <li><a href="{{ route('courses') }}">@lang('label.course')</a></li>
-                <li><a href="">@lang('label.mentor')</a></li>
+                <li><a href="{{ route('mentor') }}">@lang('label.mentor')</a></li>
             </ul>
         </div>
     </div>
