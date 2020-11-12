@@ -41,10 +41,17 @@ class LoginController extends Controller
 
     public function redirectPath()
     {
-        if (Auth::user()->role_id == config('role.admin_id')) {
-            return route('admin.dashboard');
-        }
+        switch (Auth::user()->role_id) {
+            case config('role.admin_id'):
+                return route('admin.dashboard');
 
-        return route('home');
+                break;
+            case config('role.mentor_id'):
+                return route('mentor.request');
+
+                break;
+            default:
+                return route('home');
+        }
     }
 }

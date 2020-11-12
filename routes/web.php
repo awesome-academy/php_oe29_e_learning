@@ -58,5 +58,7 @@ Route::group(['prefix' => 'courses'], function() {
     Route::get('/{course}', 'HomeController@showLessons')->name('course.lessons');
     
 });
-
+Route::group(['namespace' => 'Mentor', 'prefix' => 'mentor', 'as' => 'mentor.'], function() {
+    Route::get('/', 'MentorController@index')->name('request');
+});
 Auth::routes();
