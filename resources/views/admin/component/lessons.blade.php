@@ -8,8 +8,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>@lang('label.table')</h1>
-                                <a class="btn btn-primary btn-mine" href="{{ route('lessons.create') }}">@lang('label.add')</a>  
+                                <h1>@lang('label.table_lesson')</h1>
                             </div>
                         </div>
                     </div>
@@ -20,7 +19,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header dp-flex">
-                                        <h3 class="card-title mb-3">@lang('label.table-name')</h3>
+                                        <h3 class="card-title mb-3">@lang('label.lesson_title')</h3>
                                         <div class="dropdown" id="lightdropdown">
                                             <div class="dropdown-select">
                                                 <span class="dropdown-selected" data-url="{{ route('lesson_filter', Config::get('filter.default')) }}">@lang('label.all')</span>

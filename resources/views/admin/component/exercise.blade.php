@@ -8,7 +8,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>@lang('label.table')</h1>
+                                <h1>@lang('label.table_exercises')</h1>
                                 <a class="btn btn-primary btn-mine" href="{{ route('exercises.create') }}">@lang('label.add')</a>  
                             </div>
                         </div>
@@ -20,17 +20,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">@lang('label.table_name')</h3>
-                                        <div class="card-tools">
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" name="table_search" class="form-control float-right" placeholder="@lang('label_search')">
-                                                <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-default">
-                                                        <i class="fas fa-search"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <h3 class="card-title">@lang('label.table_exercise')</h3>
                                     </div>
                                     <div class="card-body table-responsive p-0">
                                         <table class="table table-hover">
@@ -53,7 +43,7 @@
                                                         <td>{{ $exercise->lesson->title }}</td>
                                                         <td>{{ $exercise->lesson->course->name }}</td>
                                                         <td>
-                                                            <a href="{{ $exercise->url }}" type="button" class="btn btn-info">@lang('label.info')</a>
+                                                            <a href="{{ $exercise->url }}" target="_blank" type="button" class="btn btn-info">@lang('label.info')</a>
                                                             <a href="{{ route('exercises.edit', [$exercise->id]) }}" type="button" class="btn btn-secondary">@lang('label.edit')</a>
                                                             <form class="form-custom" method="post" action="{{ route('exercises.destroy', [$exercise->id]) }}">
                                                                 @csrf
