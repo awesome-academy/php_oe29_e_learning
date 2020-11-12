@@ -87,23 +87,49 @@
                     <h1>{{ $course->name }}</h1>
                 </header>
                 <div class="related-video">
-                    <div>
+                    <div class="heading-video">
                         <div class="video-group">
                             <h3>@lang('label.post_study')</h3>
                             <div>@lang('label.total_post', ['total' => count($course->lessons)])</div>
                         </div>
+                        <div class="book-mentor">
+                            <form action="">
+                                <input class="d-none" type="text" value="{{ $lesson->id }}">
+                                <button class="book-mentor-btn">@lang('label.book_mentor')</button>
+                            </form>
+                        </div>
                     </div>
                     <ul class="list-video">
-                        @foreach ($course->lessons as $key => $lesson)
+                        @foreach ($course->lessons as $key => $lessonItem)
                             <li>
-                                <a href="{{ route('course.lesson', [$lesson->id]) }}">
-                                    <div class="check-study"><i class="fas fa-lock"></i></div>
+                                <a href="{{ route('lesson.enroll', [$lessonItem->id]) }}">
+                                    <div class="check-study">
+                                        @if ($lessonItem->status == config('status.course.finish_number'))
+                                            <i class="fas fa-check color-success"></i>
+                                        @elseif ($lessonItem->status == config('status.course.progress_number'))
+                                            <i class="fas fa-spinner color-playing"></i>
+                                        @elseif ($lessonItem->status == config('status.course.not_register_number'))
+                                            <i class="fas fa-lock"></i>
+                                        @endif
+                                    </div>
                                     <div class="list-video-content">
-                                        <h3>@lang('label.post', ['index' => $key + 1]){{ $lesson->title }}</h3>
-                                        <p><i class="fas fa-play-circle"></i></p>
+                                        <h3>@lang('label.post', ['index' => $key + 1]){{ $lessonItem->title }}</h3>
+                                        <p><i class="fas fa-play-circle @if ($lessonItem->id == $lesson->id) color-playing @endif "></i></p>
                                     </div>
                                 </a>
                             </li>
+                            @if ($lesson->id == $lessonItem->id && $lesson->exercises->count() > 0)
+                                <li class="test-container">
+                                    <div class="test-wrapper">
+                                        <h3>@lang('label.test')</h3>
+                                        @foreach ($lesson->exercises as $key => $exercise)
+                                            <div class="exercise-item">
+                                                <span>{{ $key + 1 }}</span>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>

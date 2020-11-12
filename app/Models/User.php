@@ -62,17 +62,17 @@ class User extends Authenticatable
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'course_user');
+        return $this->belongsToMany(Course::class, 'course_user')->withPivot('status');
     }
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'lesson_user');
+        return $this->belongsToMany(Lesson::class, 'lesson_user')->withPivot('status');
     }
 
     public function exercises()
     {
-        return $this->belongsToMany(Exercise::class, 'exercise_user');
+        return $this->belongsToMany(Exercise::class, 'exercise_user')->withPivot('status');
     }
 
     public function comments()

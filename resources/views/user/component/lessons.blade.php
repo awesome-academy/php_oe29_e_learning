@@ -5,7 +5,7 @@
         <section class="lesson-container">
             <ul class="link-menu-url">
                 <li>
-                    <a href="">@lang('label.course')</a>
+                    <a href="{{ route('courses') }}">@lang('label.course')</a>
                     <i class="fas fa-angle-right svg-format"></i>
                 </li>
                 <li><a href="">@lang('label.knowledge')</a></li>
@@ -15,7 +15,7 @@
             <div class="lessons-section">
                 <div class="lessons-section-title">
                     <h3>@lang('label.lesson_content')</h3>
-                    <span class="lessons-total">{{ $course->lessons->count() }} @lang('label.lessons')</span>   
+                    <span class="lessons-total">{{ $course->lessons->count() }} @lang('label.lesson')</span>   
                 </div>
                 <div class="lessons-panel">
                     <div class="lessons-panel-group">
@@ -23,12 +23,12 @@
                             <div class="panel-heading">
                                 <h5>@lang('label.content')</h5>
                             </div>
-                            @foreach ($course->lessons as $key => $lesson)
+                            @foreach ($course->lessons as $lesson)
                                 <div class="panel-collapse">
                                     <div class="panel-collapse-body">
                                         <ul>
                                             <li>
-                                                <a href="{{ route('course.lesson', [$lesson->id]) }}">
+                                                <a href="{{ route('course.enroll', [$course->id]) }}">
                                                     <span>
                                                         <i class="fas fa-play-circle"></i>
                                                         <div>{{ $lesson->title }}</div>
@@ -109,7 +109,11 @@
                     </a>
                 </div>
                 <p class="course-detail-register">@lang('label.user_registered')</p>
-                <button class="course-detail-learn-now"><a href="">@lang('label.continue_study')</a></button>
+                <form action="{{ route('course.postEnroll') }}" method="POST">
+                    @csrf
+                    <input class="d-none" type="text" value="{{ $course->id }}" name="course_id">
+                    <button class="course-detail-learn-now">@lang('label.continue_study')</button>
+                </form>
                 <ul>
                     <li>
                         <i class="fas fa-laugh"></i>

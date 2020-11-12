@@ -13,7 +13,8 @@ return [
         'pending_number' => '2',
     ],
     'course' => [
-        'progress_number' => '0',
-        'finish_number' => '1',
+        'progress_number' => '1',
+        'finish_number' => '2',
+        'not_register_number' => '0',
     ],
 ];
