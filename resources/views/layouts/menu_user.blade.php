@@ -21,7 +21,7 @@
                         <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                     @endif
                 </div>
-                <p>{{ Auth::user()->name }}</p>
+                <p class="mb-0">{{ Auth::user()->name }}</p>
             </div>
             <div class="action-container">
                 <div><i class="fas fa-bell menu-item"></i></div>

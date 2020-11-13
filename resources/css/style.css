@@ -54,7 +54,7 @@ ul {
     position: fixed;
     width: 100%;
     transition: all ease-in-out .3s;
-    z-index: 99;
+    z-index: 1;
 }
 
 .background-dark {
@@ -502,6 +502,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .course-main-container.course-row > section {

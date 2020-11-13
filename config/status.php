@@ -9,8 +9,8 @@ return [
     ],
     'exercise' => [
         'reject_number' => 0,
-        'finish_number' => 1,
-        'pending_number' => 2,
+        'finish_number' => 2,
+        'pending_number' => 1,
     ],
     'course' => [
         'progress_number' => 1,

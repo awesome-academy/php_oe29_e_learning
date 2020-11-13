@@ -9,7 +9,7 @@
                         <div class="avatar-mentor-container">
                             <div class="sub-avatar-mentor">
                                 @if ($mentor->image)
-                                    <img src="{{ asset(config('img.img_path')) . $mentor->image->url }}" alt="">
+                                    <img src="{{ asset(config('img.img_path') . $mentor->image->url) }}" alt="">
                                 @else
                                     <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                                 @endif
@@ -60,7 +60,7 @@
                             <div class="avatar-container-rate">
                                 <div class="avatar-mentor-rate">
                                     @if ($mentor->image)
-                                        <img src="{{ asset(config('img.img_path')) . $mentor->image->url }}" alt="">
+                                        <img src="{{ asset(config('img.img_path') . $mentor->image->url) }}" alt="">
                                     @else
                                         <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                                     @endif
@@ -96,7 +96,7 @@
                                     <div class="comment-content-rate">
                                         <div class="avatar-content-rate">
                                             @if ($comment->user->image)
-                                                <img src="{{ asset(config('img.img_path')) . $comment->user->image->url }}" alt="">
+                                                <img src="{{ asset(config('img.img_path')  . $comment->user->image->url) }}" alt="">
                                             @else
                                                 <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                                             @endif
