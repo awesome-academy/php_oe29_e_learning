@@ -464,6 +464,7 @@
     background-color: #b4320c;
     padding: 5px 16px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .test-container {
@@ -525,4 +526,25 @@
 
 .color-playing {
     color: #b4320c;
+}
+
+.book-success {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    right: 15px;
+    top: 100px;
+    width: 250px;
+    height: 100px;
+    z-index: 99;
+    background: rgba(92, 201, 92, 0.9);
+    color: white;
+    transform: translateX(300px);
+    transition: all .3s;
+}
+
+.book-success.show-me {
+    transform: translateX(0);
 }

@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Lesson;
 use App\Models\Course;
 use App\Models\User;
+use App\Models\Advisor;
 use Auth;
 use App\Http\Requests\StoreCommentRequest;
+use App\Http\Requests\BookMentorRequest;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
@@ -120,5 +122,16 @@ class StudentController extends Controller
         ]);
 
         return redirect()->route('course.lesson', [$lesson->id]);
+    }
+
+    public function bookMentor(Request $request)
+    {
+        Advisor::create([
+            'lesson_id' => $request->lesson_id,
+            'student_id' => Auth::id(),
+            'status' => config('status.request.pending_number'),
+        ]);
+
+        return redirect()->back()->with('message', trans('label.book_success'));
     }
 }

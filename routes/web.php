@@ -52,6 +52,7 @@ Route::group(['prefix' => 'courses'], function() {
         Route::group(['prefix' => 'lessons', 'as' => 'lesson.'], function() {
             Route::post('/comment/{lesson}', 'StudentController@storeLessonComment')->name('comment');
             Route::get('/enrollLesson/{id}', 'StudentController@enrollLesson')->name('enroll');
+            Route::post('/request', 'StudentController@bookMentor')->name('mentor');
         }); 
     });
     Route::get('/', 'HomeController@course')->name('courses');
