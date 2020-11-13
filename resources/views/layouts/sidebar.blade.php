@@ -15,22 +15,22 @@
                 </li>
                 <li class="nav-header">@lang('label.student')</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('students.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-users"></i>
                         <p>@lang('label.students')</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
+                        <i class="nav-icon fas fa-feather-alt"></i>
                         <p>
-                            @lang('label.details')
+                            @lang('label.more_actions')
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('students.exercises') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('label.exercise')</p>
                         </a>

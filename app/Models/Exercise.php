@@ -20,7 +20,7 @@ class Exercise extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'exercise_user');
+        return $this->belongsToMany(User::class, 'exercise_user')->withPivot('status', 'submit_url');
     }
 
     public function lesson()
