@@ -21,21 +21,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-feather-alt"></i>
-                        <p>
-                            @lang('label.more_actions')
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                    <a href="{{ route('students.exercises') }}" class="nav-link">
+                    <i class="nav-icon fas fa-feather-alt"></i>
+                        <p>@lang('label.exercise')</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('students.exercises') }}" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>@lang('label.exercise')</p>
-                        </a>
-                    </li>
-                    </ul>
                 </li>
                 <li class="nav-header">@lang('label.mentor')</li>
                 <li class="nav-item">

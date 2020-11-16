@@ -33,33 +33,37 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($students as $student)
-                                                    @if ($student->exercises)
-                                                        @foreach ($student->exercises as $key => $exercise)
-                                                            <tr>
-                                                                <td>{{ $key + 1 }}</td>
-                                                                <td>{{ $exercise->title }}</td>
-                                                                <td><div class="text-overflow">{{ $exercise->url }}</div></td>
-                                                                <td><div class="text-overflow">{{ $exercise->pivot->submit_url }}</div></td>
-                                                                <td>
-                                                                    <a href="{{ $exercise->pivot->submit_url }}" target="_blank" type="button" class="btn btn-info">@lang('label.info')</a>
-                                                                    <form class="form-custom" method="post" action="{{ route('exercises.destroy', [$exercise->id]) }}">
-                                                                        @csrf
-                                                                        @method('PATCH')
-                                                                        <button type="button" class="btn btn-success">@lang('label.accept')</button>
-                                                                    </form>
-                                                                    <form class="form-custom" method="post" action="{{ route('exercises.destroy', [$exercise->id]) }}">
-                                                                        @csrf
-                                                                        @method('PATCH')
-                                                                        <button class="btn btn-danger">@lang('label.reject')</button>
-                                                                    </form>
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
-                                                    @endif
+                                                @php
+                                                    $index = 1;
+                                                @endphp
+                                                @foreach ($exercises as $keyExercise => $exercise)
+                                                    @foreach ($exercise->users as $keyUser => $user)
+                                                        <tr>
+                                                            <td>{{ $index++ }}</td>
+                                                            <td>{{ $exercise->title }}</td>
+                                                            <td><div class="text-overflow">{{ $exercise->url }}</div></td>
+                                                            <td><div class="text-overflow">{{ $user->pivot->submit_url }}</div></td>
+                                                            <td>
+                                                                <a href="{{ $user->pivot->submit_url }}" target="_blank" type="button" class="btn btn-info">@lang('label.info')</a>
+                                                                <form class="form-custom" method="POST" action="{{ route('students.accept', [$exercise->id]) }}">
+                                                                    @csrf
+                                                                    @method('PATCH')
+                                                                    <input type="text" class="d-none" value="{{ $user->id }}" name="student_id">
+                                                                    <button type="submit" class="btn btn-success">@lang('label.accept')</button>
+                                                                </form>
+                                                                <form class="form-custom" method="POST" action="{{ route('students.reject', [$exercise->id]) }}">
+                                                                    @csrf
+                                                                    @method('PATCH')
+                                                                    <input type="text" class="d-none" value="{{ $user->id }}" name="student_id">
+                                                                    <button type="submit" class="btn btn-danger">@lang('label.reject')</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        <div class="paginate-container">{{ $exercises->links() }}</div>
                                     </div>
                                 </div>
                             </div>
