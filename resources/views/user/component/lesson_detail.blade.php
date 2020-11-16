@@ -1,6 +1,11 @@
 @extends('user.lesson_master')
 
 @section('content')
+    @if(session()->has('message'))
+        <div class="book-success" id="alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="learning-section">
         <div class="player-column">
             <div class="active-player">
@@ -93,8 +98,9 @@
                             <div>@lang('label.total_post', ['total' => count($course->lessons)])</div>
                         </div>
                         <div class="book-mentor">
-                            <form action="">
-                                <input class="d-none" type="text" value="{{ $lesson->id }}">
+                            <form action="{{ route('lesson.mentor') }}" method="POST">
+                                @csrf
+                                <input class="d-none" type="text" value="{{ $lesson->id }}" name="lesson_id">
                                 <button class="book-mentor-btn">@lang('label.book_mentor')</button>
                             </form>
                         </div>

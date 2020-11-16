@@ -15,5 +15,6 @@
         @include('layouts.menu_user')
         @yield('content')
 
+        <script type="text/javascript" src="{{ asset('js/alertscript.js') }}"></script>
     </body>
 </html>
