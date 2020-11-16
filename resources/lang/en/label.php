@@ -155,4 +155,11 @@ return [
     'phone_number' => 'Enter your phone number',
     'enter_address' => 'Enter your address',
     'updated_success' => 'Update success',
+    'book_mentor' => 'Book mentor',
+    'close' => 'Close',
+    'number_exercise' => '(:number exercises)',
+    'your_answer' => 'Your answer',
+    'enter_link_exercise' => 'Enter your answer',
+    'test' => 'Exercise',
+    'need_finish' => 'Please complete the lessons in advance to unlock this lesson',
 ];

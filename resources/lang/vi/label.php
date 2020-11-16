@@ -162,4 +162,11 @@ return [
     'all' => 'Tất cả',
     'table_course' => 'Danh sách khóa học',
     'course_title' => 'Khóa học',
+    'book_mentor' => 'Xin trợ giúp',
+    'close' => 'Hủy bỏ',
+    'number_exercise' => '(:number bài tập)',
+    'your_answer' => 'Câu trả lời của bạn',
+    'enter_link_exercise' => 'Điền câu trả lời của bạn',
+    'test' => 'Bài tập',
+    'need_finish' => 'Vui lòng hoàn thành các bài học trước để mở khóa bài học này',
 ];

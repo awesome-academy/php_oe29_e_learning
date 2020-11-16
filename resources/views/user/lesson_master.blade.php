@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
         <link rel="stylesheet" href="{{ asset('css/lesson.css') }}">
         <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
         <title>@lang('label.f8')</title>
     </head>
     <body>
@@ -16,5 +17,8 @@
         @yield('content')
 
         <script type="text/javascript" src="{{ asset('js/alertscript.js') }}"></script>
+        <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     </body>
 </html>
