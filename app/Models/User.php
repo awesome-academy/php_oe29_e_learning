@@ -87,12 +87,12 @@ class User extends Authenticatable
 
     public function studentRequests()
     {
-        return $this->hasMany(Request::class);
+        return $this->hasMany(Advisor::class, 'student_id');
     }
 
     public function mentorRequests()
     {
-        return $this->hasMany(Request::class);
+        return $this->hasMany(Advisor::class, 'mentor_id');
     }
     public function image()
     {
