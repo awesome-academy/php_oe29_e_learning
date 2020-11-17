@@ -25,6 +25,6 @@ class Exercise extends Model
 
     public function lesson()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Lesson::class)->withTrashed();
     }
 }
