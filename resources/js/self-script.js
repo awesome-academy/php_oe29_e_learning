@@ -36,4 +36,20 @@ window.onclick = function(event) {
             }
         }
     }
+    if (!event.target.matches('#btn-dropdown-notification')) {
+        let dropdown = document.getElementsByClassName('dropdown-notification');
+        for(let i = 0; i < dropdown.length; i++) {
+            let openDropdown = dropdown[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+let notification = document.getElementById('btn-dropdown-notification');
+if (notification) {
+    notification.onclick = function() {
+        document.getElementById("notification-content").classList.toggle("show");
+    }
 }

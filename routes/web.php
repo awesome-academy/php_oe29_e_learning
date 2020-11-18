@@ -31,16 +31,20 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
     Route::resource('exercises', 'ExerciseController');
 });
 
-Route::group(['namespace' => 'User', 'prefix' => 'settings'], function() {
-    Route::get('/', 'ProfileController@index')->name('settings');
-    Route::group(['as' => 'show.'], function() {
-        Route::get('email', 'ProfileController@showEmail')->name('email');
-        Route::get('information', 'ProfileController@showInformation')->name('information');
-        Route::get('localization', 'ProfileController@showLocalization')->name('localization');
-        Route::get('github', 'ProfileController@showGithub')->name('github');
+Route::group(['namespace' => 'User'], function() {
+    Route::post('/rate/{mentor}', 'StudentController@storeRating')->name('rating.mentor');
+    Route::group(['prefix' => 'settings'], function() {
+        Route::get('/', 'ProfileController@index')->name('settings');
+        Route::group(['as' => 'show.'], function() {
+            Route::get('email', 'ProfileController@showEmail')->name('email');
+            Route::get('information', 'ProfileController@showInformation')->name('information');
+            Route::get('localization', 'ProfileController@showLocalization')->name('localization');
+            Route::get('github', 'ProfileController@showGithub')->name('github');
+        });
+        Route::patch('/update/{user}', 'ProfileController@update')->name('update');
+        Route::post('/avatar/{user}', 'ProfileController@postAvatar')->name('avatar.store');
     });
-    Route::patch('/update/{user}', 'ProfileController@update')->name('update');
-    Route::post('/avatar/{user}', 'ProfileController@postAvatar')->name('avatar.store');
+    
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
