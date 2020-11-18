@@ -184,4 +184,7 @@ return [
     'rate' => 'Đánh giá',
     'enter_comment_here' => 'Bạn cảm thấy thế nào về mentor này?',
     'mentor_feedback' => 'Đánh giá mentor',
+    'request' => 'Yêu cầu trợ giúp',
+    'more_action' => 'Nhiều hành động hơn',
+    'history' => 'Lịch sử ',
 ];

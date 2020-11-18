@@ -8,7 +8,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('mentor.request') }}" class="nav-link">
                     <i class="nav-icon fas fa-users"></i>
                         <p>@lang('label.request')</p>
                     </a>
@@ -23,7 +23,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('mentor.history') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('label.history')</p>
                         </a>

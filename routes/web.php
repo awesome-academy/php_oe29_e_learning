@@ -72,5 +72,6 @@ Route::group(['prefix' => 'courses'], function() {
 });
 Route::group(['namespace' => 'Mentor', 'prefix' => 'mentor', 'as' => 'mentor.'], function() {
     Route::get('/', 'MentorController@index')->name('request');
+    Route::get('/history', 'MentorController@showRequestHistory')->name('history');
 });
 Auth::routes();
