@@ -187,4 +187,6 @@ return [
     'request' => 'Yêu cầu trợ giúp',
     'more_action' => 'Nhiều hành động hơn',
     'history' => 'Lịch sử ',
+    'accept_success' => 'Chấp nhận thành công',
+    'accept_fail' => 'Chấp nhận thất bại',
 ];

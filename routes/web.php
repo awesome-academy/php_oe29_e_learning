@@ -64,14 +64,15 @@ Route::group(['prefix' => 'courses'], function() {
             Route::get('/enrollLesson/{id}', 'StudentController@enrollLesson')->name('enroll');
             Route::post('/request', 'StudentController@bookMentor')->name('mentor');
             Route::post('/exercises/submit', 'StudentController@storeExercise')->name('submit');
-        }); 
+        });
     });
     Route::get('/', 'HomeController@course')->name('courses');
     Route::get('/{course}', 'HomeController@showLessons')->name('course.lessons');
     
 });
-Route::group(['namespace' => 'Mentor', 'prefix' => 'mentor', 'as' => 'mentor.'], function() {
+Route::group(['namespace' => 'Mentor', 'prefix' => 'mentor', 'as' => 'mentor.', 'middleware' => 'mentor'], function() {
     Route::get('/', 'MentorController@index')->name('request');
     Route::get('/history', 'MentorController@showRequestHistory')->name('history');
+    Route::patch('/accept/{advisor}', 'MentorController@acceptRequest')->name('accept');
 });
 Auth::routes();

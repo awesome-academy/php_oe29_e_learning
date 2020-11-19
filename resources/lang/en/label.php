@@ -187,4 +187,6 @@ return [
     'request' => 'Request',
     'more_action' => 'More action',
     'history' => 'History',
+    'accept_success' => 'Accept success',
+    'accept_fail' => 'Accept fail',
 ];
