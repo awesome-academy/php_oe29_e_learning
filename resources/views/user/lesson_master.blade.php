@@ -16,9 +16,9 @@
         @include('layouts.menu_user')
         @yield('content')
 
-        <script type="text/javascript" src="{{ asset('js/alertscript.js') }}"></script>
         <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/alertscript.js') }}"></script>
     </body>
 </html>
