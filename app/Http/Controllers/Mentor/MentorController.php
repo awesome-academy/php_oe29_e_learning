@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Advisor;
 use Auth;
+use Alert;
 
 class MentorController extends Controller
 {
@@ -30,5 +31,17 @@ class MentorController extends Controller
         }, 'lesson.course']);
 
         return view('mentor.component.history', compact('histories'));
+    }
+    
+    public function acceptRequest(Advisor $advisor)
+    {
+        $success = $advisor->update(['status' => config('status.request.finish_number')]);
+        if ($success) {
+            Alert::success(trans('label.accept_success'));
+        } else {
+            Alert::success(trans('label.accept_fail'));
+        }
+        
+        return back();
     }
 }

@@ -40,8 +40,11 @@
                                                         <td>{{ $coach->lesson->title }}</td>
                                                         <td>{{ $coach->lesson->course->name }}</td>
                                                         <td>
-                                                            <a href="#" type="button" class="btn btn-success">@lang('label.accept')</a>
-                                                            <a href="#" type="button" class="btn btn-danger">@lang('label.reject')</a>
+                                                            <form action="{{ route('mentor.accept', $coach->id) }}" method="POST" enctype="multipart/form-data">
+                                                                @csrf
+                                                                @method('PATCH')
+                                                                <button type="submit" class="btn btn-success">@lang('label.accept')</button>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 @endforeach
