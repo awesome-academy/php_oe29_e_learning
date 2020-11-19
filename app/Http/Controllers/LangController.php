@@ -11,10 +11,10 @@ class LangController extends Controller
         'en',
     ];
 
-    public function changeLang(Request $request, $lang)
+    public function changeLang(Request $request)
     {
-        if (in_array($lang, $this->langActive)) {
-            $request->session()->put(['lang' => $lang]);
+        if (in_array($request->language, $this->langActive)) {
+            $request->session()->put(['lang' => $request->language]);
             
             return redirect()->back();
         }

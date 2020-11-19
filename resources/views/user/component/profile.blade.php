@@ -88,7 +88,7 @@
                         </section>
                         <div><i class="fas fa-chevron-right arrow-color"></i></div>
                     </a>
-                    <a href="" class="user-detail-link">
+                    <a href="{{ route('show.localization') }}" class="user-detail-link">
                         <section class="detail-item">
                             <span>@lang('label.language')</span>
                             <span class="detail-description">

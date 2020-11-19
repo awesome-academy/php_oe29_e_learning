@@ -33,7 +33,8 @@
             </section>
             <section class="change-email">
                 <section>
-                    <form action="">
+                    <form action="{{ route('localization.change') }}" method="POST" id="form-localization">
+                        @csrf
                         <div class="input-container">
                             <label for="">@lang('label.use_localization')</label>
                             <div>
@@ -50,7 +51,7 @@
                         </div>
                     </form>
                     <section class="btn-submit-container">
-                        <button>@lang('label.update')</button>
+                        <button type="submit" form="form-localization">@lang('label.update')</button>
                     </section>
                 </section>
             </section>
