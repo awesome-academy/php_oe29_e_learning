@@ -781,3 +781,7 @@ ul {
 .btn.n-btn {
     width: auto;
 }
+
+.active {
+    color: #df4d20 !important;
+}

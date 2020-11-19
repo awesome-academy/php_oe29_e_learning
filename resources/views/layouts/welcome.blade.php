@@ -7,7 +7,7 @@
             </div>
             <div class="first-menu">
                 <ul>
-                    <li><a href="{{ route('home') }}">@lang('label.home')</a></li>
+                    <li><a href="{{ route('home') }}" class="active">@lang('label.home')</a></li>
                     <li><a href="{{ route('courses') }}">@lang('label.course')</a></li>
                     <li><a href="{{ route('mentor') }}">@lang('label.mentor')</a></li>
                 </ul>

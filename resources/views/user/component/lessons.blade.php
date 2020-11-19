@@ -1,5 +1,9 @@
 @extends('user.course_master')
 
+@section('course')
+    active
+@endsection
+
 @section('content')
     <section class="all-course-container">
         <section class="lesson-container">

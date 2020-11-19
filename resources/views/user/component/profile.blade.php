@@ -13,6 +13,9 @@
                                 @else
                                     <img src="{{ asset(config('title.avatar_default')) }}" alt="">
                                 @endif
+                                <div class="position-avatar-container">
+                                    <i class="fas fa-camera position-avatar"></i>
+                                </div>
                             </section>
                             <section class="sidebar-header">
                                 <h3>{{ $user->name }}</h3>

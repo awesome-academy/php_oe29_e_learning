@@ -6,8 +6,8 @@
         <div class="first-menu">
             <ul>
                 <li><a href="{{ route('home') }}">@lang('label.home')</a></li>
-                <li><a href="{{ route('courses') }}">@lang('label.course')</a></li>
-                <li><a href="{{ route('mentor') }}">@lang('label.mentor')</a></li>
+                <li><a href="{{ route('courses') }}" class="@yield('course')">@lang('label.course')</a></li>
+                <li><a href="{{ route('mentor') }}" class="@yield('mentor')">@lang('label.mentor')</a></li>
             </ul>
         </div>
     </div>
