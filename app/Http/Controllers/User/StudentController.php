@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\Advisor;
 use Auth;
 use App\Http\Requests\StoreCommentRequest;
+use App\Http\Requests\StoreRatingRequest;
 use App\Http\Requests\BookMentorRequest;
 use Illuminate\Support\Facades\DB;
 use Exception;
@@ -196,5 +197,24 @@ class StudentController extends Controller
     public function getExercisesOfUserByLessonId($id)
     {
         return Auth::user()->exercises()->where('lesson_id', $id)->get();
+    }
+
+    public function storeRating(StoreRatingRequest $request, User $mentor)
+    {
+        DB::transaction(function() use($request, $mentor) {
+            try {
+                $mentor->mentorComments()->create([
+                    'content' => $request->content,
+                    'rate' => $request->rate,
+                    'user_id' => Auth::id(),
+                ]);
+                $request = Advisor::findOrFail($request->request_id);
+                $request->update(['status' => config('status.request.finish_number')]);
+            } catch (Exception $exception) {
+                abort(403);
+            }
+        });
+        
+        return back();
     }
 }

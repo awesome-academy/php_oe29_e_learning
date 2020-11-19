@@ -26,7 +26,31 @@
                     <p>{{ Auth::user()->name }}</p>
                 </div>
                 <div class="action-container">
-                    <div><i class="fas fa-bell menu-item"></i></div>
+                    <div class="notification-wrap">
+                        <div class="bell-notification-container">
+                            <span class="number-notification">{{ $requestsOfUser->count() }}</span>
+                            <i class="fas fa-bell menu-item" id="btn-dropdown-notification"></i>
+                        </div>
+                        <div class="dropdown-notification" id="notification-content">
+                            @foreach ($requestsOfUser as $request)
+                                <div class="notify-item">
+                                    <div class="notify-img">
+                                        @if ($request->mentor->image)
+                                            <img src="{{ asset(config('img.img_path') . $request->mentor->image->url) }}" alt="">
+                                        @else
+                                            <img src="{{ asset(config('title.avatar_default')) }}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="notify-info">
+                                        <p>
+                                            @lang('label.request_user', ['mentor_name' => $request->mentor->name, 'lesson' => $request->lesson->title, 'course' => $request->lesson->course->name, 'lesson_link' => route("course.lesson", [$request->lesson->id])])
+                                        </p>
+                                        <span class="notify-action" data-toggle="modal" data-target="#request{{ $request->id }}">@lang('label.rate')</span>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                     <div class="parent-menu">
                         <i class="fas fa-caret-down menu-item" id="btn-dropdown"></i>
                         <ul class="dropdown" id="dropdown-content">
