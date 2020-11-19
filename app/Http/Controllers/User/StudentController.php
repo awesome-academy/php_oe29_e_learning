@@ -45,6 +45,29 @@ class StudentController extends Controller
         return view('user.component.lesson_detail', compact('lesson', 'course'));
     }
 
+    public function ajaxShowLesson($id)
+    {
+        $lesson = Lesson::findOrFail($id);
+        $lesson->load(['course', 'comments.user.image', 'exercises.users' => function($query) {
+            $query->where('user_id', Auth::id());
+        }]);
+        $lessonsOfUser = $this->getLessonsOfStudentByCourseId($lesson->course->id);
+        $course = $lesson->course->load('lessons.exercises');
+        foreach ($course->lessons as $lessonOfCourse) {
+            foreach ($lessonsOfUser as $lessonUser) {
+                if ($lessonOfCourse->id == $lessonUser->id) {
+                    $lessonOfCourse->status = $lessonUser->pivot->status;
+
+                    break;
+                } else {
+                    $lessonOfCourse->status = config('status.course.not_register_number');
+                }
+            }
+        }
+
+        return view('layouts.lesson_content', compact('lesson', 'course'));
+    }
+
     public function enrollLesson($id)
     {
         $lesson = Lesson::findOrFail($id);
@@ -59,7 +82,7 @@ class StudentController extends Controller
                 foreach ($lessonsOfUser as $lessonOfUser) {
                     if ($lessonOfUser->pivot->status == config('status.course.progress_number')) {
 
-                        return redirect()->route('course.lesson', [$lessonOfUser->id])->with('error', trans('label.need_finish'));
+                        return redirect()->route('course.ajax', [$lessonOfUser->id])->with('error', trans('label.need_finish'));
                     }
                 }
                 DB::transaction(function() use($lesson) {
@@ -75,10 +98,10 @@ class StudentController extends Controller
                 });
             }
 
-            return redirect()->route('course.lesson', [$id]);
+            return redirect()->route('course.ajax', [$id]);
         }
 
-        return back()->with('error', trans('label.need_finish'));
+        return response()->json(['error' => trans('label.need_finish')]);
     }
 
     public function enrollCourse(Course $course)

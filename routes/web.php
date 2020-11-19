@@ -51,6 +51,7 @@ Route::group(['prefix' => 'courses'], function() {
     Route::group(['namespace' => 'User'], function() {
         Route::group(['as' => 'course.'], function() {
             Route::get('/lesson/{id}', 'StudentController@showLessonById')->name('lesson');
+            Route::get('/ajax/{id}', 'StudentController@ajaxShowLesson')->name('ajax');
             Route::post('/comment/{course}', 'StudentController@storeCourseComment')->name('comment');
             Route::post('/postEnroll', 'StudentController@storeEnrollCourse')->name('postEnroll');
             Route::get('/enroll/{course}', 'StudentController@enrollCourse')->name('enroll');

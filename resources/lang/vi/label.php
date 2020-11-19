@@ -157,7 +157,7 @@ return [
     'updated_success' => 'Cập nhật thành công',
     'book_mentor' => 'Xin trợ giúp',
     'close' => 'Hủy bỏ',
-    'number_exercise' => '(: bài tập)',
+    'number_exercise' => '(:number bài tập)',
     'your_answer' => 'Câu trả lời của bạn',
     'enter_link_exercise' => 'Điền câu trả lời của bạn',
     'test' => 'Bài tập',
