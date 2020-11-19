@@ -31,20 +31,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
     Route::resource('exercises', 'ExerciseController');
 });
 
-Route::group(['namespace' => 'User'], function() {
-    Route::post('/rate/{mentor}', 'StudentController@storeRating')->name('rating.mentor');
-    Route::group(['prefix' => 'settings'], function() {
-        Route::get('/', 'ProfileController@index')->name('settings');
-        Route::group(['as' => 'show.'], function() {
-            Route::get('email', 'ProfileController@showEmail')->name('email');
-            Route::get('information', 'ProfileController@showInformation')->name('information');
-            Route::get('localization', 'ProfileController@showLocalization')->name('localization');
-            Route::get('github', 'ProfileController@showGithub')->name('github');
-        });
-        Route::patch('/update/{user}', 'ProfileController@update')->name('update');
-        Route::post('/avatar/{user}', 'ProfileController@postAvatar')->name('avatar.store');
+Route::group(['namespace' => 'User', 'prefix' => 'settings'], function() {
+    Route::get('/', 'ProfileController@index')->name('settings');
+    Route::group(['as' => 'show.'], function() {
+        Route::get('email', 'ProfileController@showEmail')->name('email');
+        Route::get('information', 'ProfileController@showInformation')->name('information');
+        Route::get('localization', 'ProfileController@showLocalization')->name('localization');
+        Route::get('github', 'ProfileController@showGithub')->name('github');
     });
-    
+    Route::patch('/update/{user}', 'ProfileController@update')->name('update');
+    Route::post('/avatar/{user}', 'ProfileController@postAvatar')->name('avatar.store');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -55,6 +51,7 @@ Route::group(['prefix' => 'courses'], function() {
     Route::group(['namespace' => 'User'], function() {
         Route::group(['as' => 'course.'], function() {
             Route::get('/lesson/{id}', 'StudentController@showLessonById')->name('lesson');
+            Route::get('/ajax/{id}', 'StudentController@ajaxShowLesson')->name('ajax');
             Route::post('/comment/{course}', 'StudentController@storeCourseComment')->name('comment');
             Route::post('/postEnroll', 'StudentController@storeEnrollCourse')->name('postEnroll');
             Route::get('/enroll/{course}', 'StudentController@enrollCourse')->name('enroll');
@@ -75,4 +72,5 @@ Route::group(['namespace' => 'Mentor', 'prefix' => 'mentor', 'as' => 'mentor.', 
     Route::get('/history', 'MentorController@showRequestHistory')->name('history');
     Route::patch('/accept/{advisor}', 'MentorController@acceptRequest')->name('accept');
 });
+Route::post('/language', 'LangController@changeLang')->name('localization.change');
 Auth::routes();

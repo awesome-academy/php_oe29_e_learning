@@ -335,10 +335,16 @@ section {
     text-align: center;
     align-items: center;
 }
+
+.radio-container label {
+    margin: 0;
+}
+
 .radio-container > input {
     border-radius: 16px;
     width: 16px;
     height: 16px;
+    margin-right: 5px;
 }
 
 .error-message {
