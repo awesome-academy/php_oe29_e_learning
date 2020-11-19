@@ -20,5 +20,6 @@
         <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/alertscript.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/self-script.js') }}"></script>
     </body>
 </html>

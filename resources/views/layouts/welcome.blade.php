@@ -89,7 +89,7 @@
             <h5>@lang('label.description_banner')</h5>
             <h1>@lang('label.title_banner')</h1>
             <div class="btn-course">
-                <a href="">@lang('label.course')</a>
+                <a href="{{ route('courses') }}">@lang('label.course')</a>
             </div>
         </section>
     </div>

@@ -18,14 +18,6 @@ class HomeController extends Controller
     public function index()
     {
         $courses = Course::with('image')->latest('created_at')->take(config('title.course_number'))->get();
-        if (Auth::check()) {
-            $requestsOfUser = Advisor::whereNotNull('mentor_id')
-                ->where([['student_id', Auth::id()], ['status', config('status.request.pending_number')]])
-                ->with('mentor.image', 'lesson.course')
-                ->get();
-
-            return view('user.component.index', compact('courses', 'requestsOfUser'));
-        }
         
         return view('user.component.index', compact('courses'));
     }

@@ -26,4 +26,11 @@ class DashboardController extends Controller
 
         return $user;
     }
+
+    public function getAllMentors()
+    {
+        $mentors = $this->getUserByRole(config('role.mentor_id'));
+
+        return view('admin.component.mentor', compact('mentors'));
+    }
 }
