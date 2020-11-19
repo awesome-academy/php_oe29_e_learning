@@ -184,4 +184,7 @@ return [
     'rate' => 'Rate',
     'enter_comment_here' => 'What do you think about this mentor?',
     'mentor_feedback' => 'Rate mentor',
+    'request' => 'Request',
+    'more_action' => 'More action',
+    'history' => 'History',
 ];
