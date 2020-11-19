@@ -1,5 +1,9 @@
 @extends('user.lesson_master')
 
+@section('course')
+    active
+@endsection
+
 @section('content')
     @if(session()->has('message'))
         <div class="book-success" id="alert-success">
