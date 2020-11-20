@@ -8,7 +8,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>@lang('label.table_exercise_user')</h1>
+                                <h1>@lang('label.exercises')</h1>
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">@lang('label.exercise_user_title')</h3>
+                                        <h3 class="card-title">@lang('label.exercise')</h3>
                                     </div>
                                     <div class="card-body table-responsive p-0">
                                         <table class="table table-hover">
@@ -29,7 +29,7 @@
                                                     <th>@lang('label.title')</th>
                                                     <th>@lang('label.url')</th>
                                                     <th>@lang('label.submit_url')</th>
-                                                    <th class="width-img">@lang('label.action')</th>
+                                                    <th>@lang('label.action')</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -126,14 +126,18 @@ class StudentController extends Controller
     public function storeEnrollCourse(Request $request)
     {
         $course = Course::findOrFail($request->course_id);
-        $course->load('users', 'lessons');
+        $course->load('users', 'lessons.exercises');
         if ($course->users->contains(Auth::user())) {
             return redirect()->route('course.enroll', [$request->course_id]);
         } else {
             DB::transaction(function() use($course) {
                 try {
                     $course->users()->attach(Auth::user()->id, ['status' => config('status.course.progress_number')]);
-                    $course->lessons->first()->users()->attach(Auth::user()->id, ['status' => config('status.course.progress_number')]);
+                    if ($course->lessons->first()->exercises->count()) {
+                        $course->lessons->first()->users()->attach(Auth::user()->id, ['status' => config('status.course.progress_number')]);
+                    } else {
+                        $course->lessons->first()->users()->attach(Auth::user()->id, ['status' => config('status.course.finish_number')]);
+                    }
                 } catch (Exception $exception) {
                     abort(403);
                 }
@@ -232,7 +236,7 @@ class StudentController extends Controller
                     'user_id' => Auth::id(),
                 ]);
                 $request = Advisor::findOrFail($request->request_id);
-                $request->update(['status' => config('status.request.finish_number')]);
+                $request->update(['status' => config('status.request.rated_number')]);
             } catch (Exception $exception) {
                 abort(403);
             }

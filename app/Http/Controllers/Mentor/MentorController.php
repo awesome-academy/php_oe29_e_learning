@@ -25,17 +25,20 @@ class MentorController extends Controller
 
     public function showRequestHistory()
     {
-        $histories = Advisor::where([['status', config('status.request.finish_number')], ['mentor_id', Auth::id()]])->paginate(config('paginate.lesson_number'));
+        $histories = Advisor::where([['status', '<>', config('status.request.pending_number')], ['mentor_id', Auth::id()]])->paginate(config('paginate.lesson_number'));
         $histories->load(['student.comments' => function($query) {
             $query->where([['commentable_type', config('type.mentor')], ['commentable_id', Auth::id()]]); 
         }, 'lesson.course']);
-
+        
         return view('mentor.component.history', compact('histories'));
     }
     
     public function acceptRequest(Advisor $advisor)
     {
-        $success = $advisor->update(['status' => config('status.request.finish_number')]);
+        $success = $advisor->update([
+            'status' => config('status.request.accept_number'),
+            'mentor_id' => Auth::id(),
+        ]);
         if ($success) {
             Alert::success(trans('label.accept_success'));
         } else {

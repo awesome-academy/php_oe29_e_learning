@@ -39,8 +39,10 @@ class StudentController extends Controller
 
     public function rejectExercise(Request $request, Exercise $exercise)
     {
+        $exercise->load('lesson');
         $user = User::findOrFail($request->student_id);
         $exercise->users()->updateExistingPivot($user, ['status' => config('status.exercise.reject_number')]);
+        $exercise->lesson->users()->updateExistingPivot($user, ['status' => config('status.course.progress_number')]);
         Alert::success(trans('label.updated_success'));
 
         return back();

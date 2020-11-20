@@ -19,7 +19,8 @@ return [
     ],
     'request' => [
         'pending_number' => 1,
-        'finish_number' => 2,
+        'accept_number' => 2,
         'reject_number' => 0,
+        'rated_number' => 3,
     ]
 ];

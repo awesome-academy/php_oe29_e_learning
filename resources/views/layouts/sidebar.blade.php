@@ -28,7 +28,7 @@
                 </li>
                 <li class="nav-header">@lang('label.mentor')</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.mentors') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-graduate"></i>
                         <p>@lang('label.mentors')</p>
                     </a>
