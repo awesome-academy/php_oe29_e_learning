@@ -189,4 +189,10 @@ return [
     'history' => 'History',
     'accept_success' => 'Accept success',
     'accept_fail' => 'Accept fail',
+    'accept' => 'Accept',
+    'reject' => 'Reject',
+    'submit_url' => 'Submit Url',
+    'requests' => 'All requests',
+    'histories' => 'All histories',
+    'book_success' => 'Book mentor success',
 ];
