@@ -189,4 +189,10 @@ return [
     'history' => 'Lịch sử ',
     'accept_success' => 'Chấp nhận thành công',
     'accept_fail' => 'Chấp nhận thất bại',
+    'accept' => 'Chấp nhận',
+    'reject' => 'Từ chối',
+    'submit_url' => 'Đường dẫn câu trả lời',
+    'requests' => 'Danh sách yêu cầu',
+    'histories' => 'Danh sách lịch sử trợ giúp',
+    'book_success' => 'Bạn đã gọi mentor thành công',
 ];

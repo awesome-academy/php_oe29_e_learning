@@ -8,7 +8,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>@lang('label.table_request')</h1> 
+                                <h1>@lang('label.requests')</h1> 
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">@lang('label.request_title')</h3>
+                                        <h3 class="card-title">@lang('label.request')</h3>
                                     </div>
                                     <div class="card-body table-responsive p-0">
                                         <table class="table table-hover">
