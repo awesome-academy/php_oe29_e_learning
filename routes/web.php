@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
     Route::get('/mentors', 'DashboardController@getAllMentors')->name('admin.mentors');
     Route::get('/lessons/filter/{id}', 'LessonController@filter')->name('lesson_filter');
