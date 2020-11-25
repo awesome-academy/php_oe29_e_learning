@@ -43,11 +43,7 @@
                                                         <td>
                                                             <a href="{{ route('courses.show', [$course->id]) }}" type="button" class="btn btn-info">@lang('label.info')</a>
                                                             <a href="{{ route('courses.edit', [$course->id]) }}" type="button" class="btn btn-secondary">@lang('label.edit')</a>
-                                                            <form class="form-custom" method="post" action="{{ route('courses.destroy', [$course->id]) }}">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <button class="btn btn-danger">@lang('label.delete')</button>
-                                                            </form>
+                                                            <a class="btn btn-danger" data-toggle="modal" data-target="#course{{ $course->id }}">@lang('label.delete')</a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -63,4 +59,29 @@
             </div>
         </div>
     </div>
+    @foreach ($courses as $course)
+        <div class="modal fade" id="course{{ $course->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">@lang('label.confirm_modal')</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-custom" method="post" action="{{ route('courses.destroy', [$course->id]) }}" id="form{{ $course->id }}">
+                            @csrf
+                            @method('delete')
+                            <p>@lang('label.confirm_delete')</p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('label.close')</button>
+                        <button type="submit" class="btn btn-primary" form="form{{ $course->id }}">@lang('label.accept')</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection
