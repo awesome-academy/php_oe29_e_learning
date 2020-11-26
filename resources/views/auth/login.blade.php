@@ -12,7 +12,7 @@
                             <div class="auth-img-container">
                                 <img src="{{ asset(config('title.auth_facebook_logo')) }}" alt="">
                             </div>
-                            <span class="with-before">@lang('label.f8_auth_google')</span>
+                            <span class="with-before">@lang('label.f8_auth_facebook')</span>
                         </button>
                     </li>
                     <li>
@@ -20,10 +20,10 @@
                             <div class="auth-img-container">
                                 <img src="{{ asset(config('title.auth_google_logo')) }}" alt="">
                             </div>
-                            <span class="with-before">@lang('label.f8_auth_facebook')</span>
+                            <span class="with-before">@lang('label.f8_auth_google')</span>
                         </button>
                     </li>
-                    <p class="auth-sub-heading space">@lang('f8_auth_tips')</p>
+                    <p class="auth-sub-heading space">@lang('label.f8_auth_tips')</p>
                     <li class="auth-separator">
                         <span class="sub-auth-separator">@lang('label.or')</span>
                     </li>
@@ -51,7 +51,7 @@
                             <button type="submit" class="auth-btn-submit">@lang('label.login')</button>
                         </form>
                         <section class="auth-reset-pwd">
-                            <a href="" class="auth-link">@lang('label.forget_password')</a>
+                            <a href="{{ route('password.request') }}" class="auth-link">@lang('label.forget_password')</a>
                         </section>
                     </li>
                 </ul>

@@ -40,7 +40,7 @@
                                         <span>{{ config('title.demo_students') }}</span>
                                     </li>
                                     <li>
-                                        <a href="#">@lang('label.study_now')</a>
+                                        <a href="{{ route('course.lessons', [$course->id]) }}">@lang('label.study_now')</a>
                                     </li>
                                 </ul>
                             </div>

@@ -106,9 +106,9 @@
         </section>
         <section class="course-module">
             <div class="course-detail-purchase">
-                <div class="course-img-preview">
+                <div class="course-img-preview" data-url="{{ asset(config('img.img_path') . $course->image->url) }}" id="url-img-preview">
                     <a href="">
-                        <div class="course-detail-background"></div>
+                        <div class="course-detail-background" id="img-preview-container"></div>
                         <i class="fas fa-play-circle position-center"></i>
                     </a>
                 </div>
