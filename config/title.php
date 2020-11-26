@@ -15,4 +15,6 @@ return [
     'auth_facebook_logo' => '/images/facebook-svg-logo.png',
     'profile_icon' => '/img/icon.svg',
     'course_number' => 4,
+    'limit_words' => 7,
+    'test_id' => 27,
 ];

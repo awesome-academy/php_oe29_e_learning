@@ -49,21 +49,20 @@ class CourseController extends Controller
      */
     public function store(CourseRequest $request)
     {
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
+        $data = $request->all();
+        if ($data['photo']) {
+            $file = $data['photo'];
             $name = time() . $file->getClientOriginalName();
             $path = public_path(config('img.img_path'));
             $file->move($path, $name);
         }
-        DB::transaction(function() use($request, $name) {
-            try {
-                $course = $this->courseRepo->create($request->all());
-                $this->courseRepo->createPolymorphic($course->id , 'image', ['url' => $name]);        
-                Alert::success(trans('label.created_success'));
-            } catch (Exception $exception) {
-                Alert::error(trans('label.created_fail'));
-            }
-        });
+        try {
+            $course = $this->courseRepo->create($data);
+            $this->courseRepo->createPolymorphic($course->id , 'image', ['url' => $name]);        
+            Alert::success(trans('label.created_success'));
+        } catch (Exception $exception) {
+            Alert::error(trans('label.created_fail'));
+        }
 
         return redirect()->route('courses.index');
     }
@@ -74,9 +73,9 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($id)
     {
-        $course->load('lessons');
+        $course = $this->courseRepo->loadRelations($id, ['lessons']);
 
         return view('admin.component.show_course', compact('course'));
     }
@@ -87,8 +86,9 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit($id)
     {
+        $course = $this->courseRepo->find($id);
         return view('admin.component.edit_course', compact('course'));
     }
 
@@ -99,22 +99,23 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CourseRequest $request, Course $course)
+    public function update(CourseRequest $request, $id)
     {
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
+        $data = $request->all();
+        if ($request->photo) {
+            $file = $data['photo'];
             $name = time() . $file->getClientOriginalName();
             $path = public_path(config('img.img_path'));
             $file->move($path, $name);
-            $result = $this->courseRepo->update($course->id, [
-                'name' => $request->name,
-                'description' => $request->description,
-                'img_url' => $name,
+            $result = $this->courseRepo->update($id, [
+                'name' => $data['name'],
+                'description' => $data['description'],
             ]);
+            $this->courseRepo->updatePolymorphic($id , 'image', ['url' => $name]);
         } else {
-            $result = $this->courseRepo->update($course->id, [
-                'name' => $request->name,
-                'description' => $request->description,
+            $result = $this->courseRepo->update($id, [
+                'name' => $data['name'],
+                'description' => $data['description'],
             ]);
         }
         if ($result) {
@@ -132,9 +133,9 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy($id)
     {
-        $result = $this->courseRepo->delete($course->id);
+        $result = $this->courseRepo->delete($id);
         if ($result) {
             Alert::success(trans('label.delete_success'));
         } else {

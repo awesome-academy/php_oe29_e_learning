@@ -49,7 +49,7 @@ abstract class BaseRepository implements RepositoryInterface
     
     public function update($id, $attributes = [])
     {
-        $result = $this->find($id);
+        $result = $this->model->find($id);
         if ($result) {
             $result->update($attributes);
 
@@ -61,7 +61,7 @@ abstract class BaseRepository implements RepositoryInterface
     
     public function delete($id)
     {
-        $result = $this->find($id);
+        $result = $this->model->find($id);
         if ($result) {
             $result->delete();
 
@@ -73,11 +73,22 @@ abstract class BaseRepository implements RepositoryInterface
 
     public function createPolymorphic($id, $relation, $attributes = [])
     {
-        $result = $this->find($id);
-        if ($result) {
-            return $result->$relation()->create($attributes);
-        }
+        $result = $this->model->find($id);
 
-        return false;
+        return $result ? $result->$relation()->create($attributes) : false;
+    }
+
+    public function updatePolymorphic($id, $relation, $attributes = [])
+    {
+        $result = $this->model->find($id);
+
+        return $result ? $result->$relation()->update($attributes) : false;
+    }
+
+    public function loadRelations($id, $relations = [])
+    {
+        $result = $this->model->find($id);
+
+        return $result ? $result->load($relations) : false;
     }
 }
