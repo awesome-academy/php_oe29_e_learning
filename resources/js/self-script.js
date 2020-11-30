@@ -53,3 +53,9 @@ if (notification) {
         document.getElementById("notification-content").classList.toggle("show");
     }
 }
+
+let dataImgPreview = document.getElementById('url-img-preview');
+if (dataImgPreview) {
+    let imgPreviewContainer = document.getElementById('img-preview-container');
+    imgPreviewContainer.style.background = `url(${dataImgPreview.dataset.url}) 50% 50% / cover no-repeat`;
+}

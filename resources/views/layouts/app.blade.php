@@ -18,7 +18,7 @@
 <body>
     <section class="container-auth">
         <header class="header-auth">
-            <div class="header-link"><a href="#"><img src="{{ asset(config('title.auth_logo')) }}" alt=""></a></div>
+            <div class="header-link"><a href="{{ route('home') }}"><img src="{{ asset(config('title.auth_logo')) }}" alt=""></a></div>
         </header>
         
         @yield('content')

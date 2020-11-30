@@ -47,4 +47,12 @@ interface RepositoryInterface
      * @return mixed
      */
     public function createPolymorphic($id, $relation, $attributes = []);
+
+    /**
+     * Load relations
+     * @param $id
+     * @param array $relation
+     * @return mixed
+     */
+    public function loadRelations($id, $relations = []);
 }
