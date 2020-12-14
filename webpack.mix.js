@@ -23,10 +23,12 @@ mix.js('resources/js/app.js', 'public/js')
     .styles('resources/css/detail.css', 'public/css/detail.css')
     .styles('resources/css/mentor.css', 'public/css/mentor.css')
     .styles('resources/css/scrollbar.css', 'public/css/scrollbar.css')
+    .styles('resources/css/realtimechat.css', 'public/css/realtimechat.css')
     .js('resources/js/script.js', 'public/js/script.js')
     .js('resources/js/backgroundscript.js', 'public/js/backgroundscript.js')
     .js('resources/js/dropdown.js', 'public/js/dropdown.js')
     .js('resources/js/self-script.js', 'public/js/self-script.js')
     .js('resources/js/mentorscript.js', 'public/js/mentorscript.js')
     .js('resources/js/preview.js', 'public/js/preview.js')
-    .js('resources/js/alertscript.js', 'public/js/alertscript.js');
+    .js('resources/js/alertscript.js', 'public/js/alertscript.js')
+    .js('resources/js/ajax-chat.js', 'public/js/ajax-chat.js');

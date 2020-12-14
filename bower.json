@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "jquery": "^3.5.1",
-    "Font-Awesome": "^5.15.1"
+    "Font-Awesome": "^5.15.1",
+    "pusher-js": "pusher#^7.0"
   }
 }

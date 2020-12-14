@@ -197,4 +197,5 @@ return [
     'book_success' => 'Book mentor success',
     'confirm_modal' => 'Warning',
     'confirm_delete' => 'Are you sure about that?',
+    'end' => 'End session',
 ];
