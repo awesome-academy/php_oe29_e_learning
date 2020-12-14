@@ -75,6 +75,9 @@ Route::group(['namespace' => 'Mentor', 'prefix' => 'mentor', 'as' => 'mentor.', 
     Route::get('/', 'MentorController@index')->name('request');
     Route::get('/history', 'MentorController@showRequestHistory')->name('history');
     Route::patch('/accept/{advisor}', 'MentorController@acceptRequest')->name('accept');
+    Route::get('/chat', 'MentorController@showChatSession')->name('chat');
 });
 Route::post('/language', 'LangController@changeLang')->name('localization.change');
+Route::get('/message/{id}', 'MessageController@getMessages')->name('message');
+Route::post('/message', 'MessageController@sendMessage')->name('chat');
 Auth::routes();
