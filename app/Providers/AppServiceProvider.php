@@ -16,7 +16,19 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(
             \App\Repositories\Course\CourseRepositoryInterface::class,
-            \App\Repositories\Course\CourseRepository::class,
+            \App\Repositories\Course\CourseRepository::class, 
+        );
+        $this->app->singleton(
+            \App\Repositories\User\UserRepositoryInterface::class,
+            \App\Repositories\User\UserRepository::class,
+        );
+        $this->app->singleton(
+            \App\Repositories\Message\MessageRepositoryInterface::class,
+            \App\Repositories\Message\MessageRepository::class,
+        );
+        $this->app->singleton(
+            \App\Repositories\Advisor\AdvisorRepositoryInterface::class,
+            \App\Repositories\Advisor\AdvisorRepository::class,
         );
     }
 
@@ -29,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer(
             ['user.component.index', 'user.component.lesson_detail', 'user.component.course', 'user.component.lessons', 'user.component.mentor'], 'App\Http\View\Composers\AdvisorComposer'
+        );
+        View::composer(
+            ['layouts.message'], 'App\Http\View\Composers\RequestComposer'
         );
     }
 }

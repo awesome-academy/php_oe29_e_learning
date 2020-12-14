@@ -55,4 +55,20 @@ interface RepositoryInterface
      * @return mixed
      */
     public function loadRelations($id, $relations = []);
+
+    /**
+     * Update records
+     * @param array $conditionAttributes
+     * @param array $updateAttributes
+     * @return mixed
+     */
+    public function updateWithWhere($conditionAttributes = [], $updateAttributes = []);
+
+    /**
+     * Get records with conditions
+     * @param array $relations
+     * @param array $conditionAttributes
+     * @return mixed
+     */
+    public function getAllWithWhere($relations = [], $conditionAttributes = []);
 }
