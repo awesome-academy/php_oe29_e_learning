@@ -10,4 +10,9 @@ class CourseRepository extends BaseRepository implements CourseRepositoryInterfa
     {
         return Course::class;
     }
+
+    public function getLatestCourse($relations = [], $number)
+    {
+        return $this->model->with($relations)->latest('created_at')->take($number)->get();
+    }
 }
