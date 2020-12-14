@@ -90,3 +90,65 @@
 .hight-light {
     color: rgb(255, 185, 36);
 }
+
+#content-chat {
+    padding: 1rem;
+    display: flex;
+}
+
+.content-wrapper .chat-list-container {
+    margin-right: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    border-radius: 5px;
+    margin-right: 1rem;
+    width: 310px;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.content-wrapper .user-item-chat:hover {
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#content-chat .mentor-container.chat-content {
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    border-radius: 5px;
+}
+
+#content-chat .header-chat {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+#content-chat .receive {
+    background-color: #e4e6eb;
+}
+
+#content-chat #text-chat .message span {
+    color: #1c1e21;
+}
+
+#content-chat .send-action input {
+    background-color: #e4e6eb;
+}
+
+#content-chat .pending {
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(58, 136, 255);
+}
+
+#content-chat .avatar-chat.sub-avatar-mentor {
+    position: relative;
+}
+
+#content-chat .last-message-user{
+    width: 180px;
+}
+
+#content-chat .active-chat {
+    background-color: #cde6ff;
+}
