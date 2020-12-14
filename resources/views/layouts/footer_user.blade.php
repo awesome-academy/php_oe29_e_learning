@@ -34,7 +34,7 @@
             <h6>@lang('label.follow_us')</h6>
             <p>@lang('label.contact_mail')</p>
             <input type="email" placeholder="@lang('label.enter_email')">
-            <button class="btn">@lang('label.register')</button>
+            <button class="btn-mine">@lang('label.register')</button>
         </section>
     </section>
 </footer>

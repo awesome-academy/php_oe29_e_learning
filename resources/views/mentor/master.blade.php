@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@lang('label.title')</title>
         <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
@@ -14,6 +15,9 @@
         <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mentor.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/realtimechat.css') }}">
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
@@ -46,6 +50,7 @@
             @yield('content')
         </div>
         @include('sweetalert::alert')
+        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -63,6 +68,7 @@
         <script src="{{ asset('dist/js/demo.js') }}"></script>
         <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
-        <script src="{{ asset('js/dropdown.js') }}"></script>
+        <script src="{{ asset('bower_components/pusher-js/dist/web/pusher.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/ajax-chat.js') }}"></script>
     </body>
 </html>
