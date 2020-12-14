@@ -197,4 +197,5 @@ return [
     'book_success' => 'Bạn đã gọi mentor thành công',
     'confirm_modal' => 'Cảnh báo',
     'confirm_delete' => 'Bạn có chắc chắn muốn xóa?',
+    'end' => 'Kết thúc',
 ];
