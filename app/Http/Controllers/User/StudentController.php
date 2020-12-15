@@ -171,11 +171,15 @@ class StudentController extends Controller
 
     public function bookMentor(Request $request)
     {
-        Advisor::create([
+        $data = [
             'lesson_id' => $request->lesson_id,
             'student_id' => Auth::id(),
             'status' => config('status.request.pending_number'),
-        ]);
+        ];
+        $advisor = Advisor::where($data)->get();
+        if (!$advisor) {
+            Advisor::create($data);
+        }
 
         return redirect()->back()->with('message', trans('label.book_success'));
     }

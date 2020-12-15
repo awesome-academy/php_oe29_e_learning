@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\Advisor;
 use Auth;
 use Alert;
+use App\Repositories\Advisor\AdvisorRepositoryInterface;
 
 class MentorController extends Controller
 {
-    public function __construct()
+    protected $advisorRepo;
+
+    public function __construct(AdvisorRepositoryInterface $advisorRepo)
     {
         $this->middleware('auth');
+        $this->advisorRepo = $advisorRepo;
     }
 
     public function index()
@@ -33,7 +37,7 @@ class MentorController extends Controller
         return view('mentor.component.history', compact('histories'));
     }
     
-    public function acceptRequest(Advisor $advisor)
+    public function acceptRequest(Advisor $advisor, Request $request)
     {
         $success = $advisor->update([
             'status' => config('status.request.accept_number'),
@@ -46,5 +50,12 @@ class MentorController extends Controller
         }
         
         return back();
+    }
+
+    public function showChatSession()
+    {
+        $students = $this->advisorRepo->getMessageSendFromStudent(Auth::id());
+        
+        return view('mentor.component.chat', compact('students'));
     }
 }
