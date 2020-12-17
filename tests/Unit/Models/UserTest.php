@@ -41,6 +41,7 @@ class UserTest extends TestCase
             'address',
             'github_url',
             'role_id',
+            'last_studied_at',
         ], $this->user);
     }
 

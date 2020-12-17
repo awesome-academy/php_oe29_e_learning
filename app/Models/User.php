@@ -26,6 +26,7 @@ class User extends Authenticatable
         'address',
         'github_url',
         'role_id',
+        'last_studied_at',
     ];
 
     /**
@@ -58,7 +59,7 @@ class User extends Authenticatable
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'lesson_user')->withPivot('status');
+        return $this->belongsToMany(Lesson::class, 'lesson_user')->withPivot('status')->withTimestamps();
     }
 
     public function exercises()
