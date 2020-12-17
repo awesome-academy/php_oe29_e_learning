@@ -70,5 +70,5 @@ interface RepositoryInterface
      * @param array $conditionAttributes
      * @return mixed
      */
-    public function getAllWithWhere($relations = [], $conditionAttributes = []);
+    public function getData($relations = [], $conditionAttributes = []);
 }

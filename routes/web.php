@@ -41,6 +41,7 @@ Route::group(['namespace' => 'User'], function() {
             Route::get('information', 'ProfileController@showInformation')->name('information');
             Route::get('localization', 'ProfileController@showLocalization')->name('localization');
             Route::get('github', 'ProfileController@showGithub')->name('github');
+            Route::get('chart', 'ProfileController@getChartData')->name('chart');
         });
     });
     Route::patch('/update/{user}', 'ProfileController@update')->name('update');

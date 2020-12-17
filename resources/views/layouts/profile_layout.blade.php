@@ -30,5 +30,6 @@
         <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/preview.js') }}"></script>
+        <script src="{{ asset('js/Chart.js') }}"></script>
     </body>
 </html>

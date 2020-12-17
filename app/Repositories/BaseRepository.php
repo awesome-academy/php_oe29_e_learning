@@ -97,7 +97,7 @@ abstract class BaseRepository implements RepositoryInterface
         return $this->model->where($conditionAttributes)->update($updateAttributes) ? true : false;
     }
 
-    public function getAllWithWhere($relations = [], $conditionAttributes = [])
+    public function getData($relations = [], $conditionAttributes = [])
     {
         return $this->model->with($relations)->where($conditionAttributes)->get();
     }

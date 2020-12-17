@@ -19,5 +19,6 @@
     "/css/detail.css": "/css/detail.css",
     "/css/mentor.css": "/css/mentor.css",
     "/css/scrollbar.css": "/css/scrollbar.css",
-    "/css/realtimechat.css": "/css/realtimechat.css"
+    "/css/realtimechat.css": "/css/realtimechat.css",
+    "/js/Chart.js": "/js/Chart.js"
 }
