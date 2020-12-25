@@ -15,6 +15,8 @@ use App\Http\Requests\StoreRatingRequest;
 use App\Http\Requests\BookMentorRequest;
 use Illuminate\Support\Facades\DB;
 use Exception;
+use Carbon\Carbon;
+use App\Events\StudentStudying;
 
 class StudentController extends Controller
 {
@@ -25,6 +27,7 @@ class StudentController extends Controller
 
     public function showLessonById($id)
     {
+
         $lesson = Lesson::findOrFail($id);
         $lesson->load(['course', 'comments.user.image', 'exercises.users' => function($query) {
             $query->where('user_id', Auth::id());
@@ -42,6 +45,7 @@ class StudentController extends Controller
                 }
             }
         }
+        event(new StudentStudying(Auth::user(), Carbon::now()->toDateTimeString()));
 
         return view('user.component.lesson_detail', compact('lesson', 'course'));
     }
@@ -65,6 +69,7 @@ class StudentController extends Controller
                 }
             }
         }
+        event(new StudentStudying(Auth::user(), Carbon::now()->toDateTimeString()));
 
         return view('layouts.lesson_content', compact('lesson', 'course'));
     }
@@ -180,7 +185,7 @@ class StudentController extends Controller
         if (!$advisor->count()) {
             Advisor::create($data);
         }
-
+        
         return redirect()->back()->with('message', trans('label.book_success'));
     }
     
