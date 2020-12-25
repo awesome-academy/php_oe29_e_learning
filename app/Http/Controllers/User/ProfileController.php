@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Auth;
 use Alert;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -87,5 +88,23 @@ class ProfileController extends Controller
         }
 
         return redirect()->route('settings');
+    }
+
+    public function getChartData()
+    {
+        $sevenDaysAgo = Carbon::now()->subDays(config('number.day_for_chart'));
+        $day = Carbon::now()->day;
+        $data = [];
+        $lessonsOfUser = Auth::user()->load(['lessons' => function ($query) use ($sevenDaysAgo) {
+            $query->where('lesson_user.created_at', '>', $sevenDaysAgo);
+        }]);
+        $lessonsGroupByDay = $lessonsOfUser->lessons->groupBy(function($item) {
+            return $item->pivot->created_at->format('d');
+        });
+        for ($index = $sevenDaysAgo->day; $index <= $day; $index++) {
+            $data[$index] = array_key_exists($index, $lessonsGroupByDay->toArray()) ? $lessonsGroupByDay[$index]->count() : config('number.default');
+        };
+
+        return response()->json($data);
     }
 }

@@ -395,3 +395,12 @@ a:hover {
     font-size: 1.5rem;
     color: white;
 }
+
+.user-chart {
+    padding-top: 80px;
+    margin-left: 50px;
+}
+
+#chart-container {
+    width: 550px;
+}

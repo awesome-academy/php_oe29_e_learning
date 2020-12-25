@@ -108,6 +108,11 @@
                     </a>
                 </section>
             </section>
+            <section class="user-chart">
+                <div id="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </section>
         </section>
     @endisset
 @endsection

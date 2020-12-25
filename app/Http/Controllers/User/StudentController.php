@@ -177,7 +177,7 @@ class StudentController extends Controller
             'status' => config('status.request.pending_number'),
         ];
         $advisor = Advisor::where($data)->get();
-        if (!$advisor) {
+        if (!$advisor->count()) {
             Advisor::create($data);
         }
 
