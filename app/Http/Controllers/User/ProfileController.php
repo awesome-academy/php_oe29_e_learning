@@ -96,7 +96,7 @@ class ProfileController extends Controller
         $day = Carbon::now()->day;
         $data = [];
         $lessonsOfUser = Auth::user()->load(['lessons' => function ($query) use ($sevenDaysAgo) {
-            $query->where('lesson_user.created_at', '>', $sevenDaysAgo);
+            $query->where([['lesson_user.created_at', '>', $sevenDaysAgo], ['lesson_user.status', config('status.course.finish_number')]]);
         }]);
         $lessonsGroupByDay = $lessonsOfUser->lessons->groupBy(function($item) {
             return $item->pivot->created_at->format('d');

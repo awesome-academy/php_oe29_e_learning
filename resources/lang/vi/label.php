@@ -198,4 +198,11 @@ return [
     'confirm_modal' => 'Cảnh báo',
     'confirm_delete' => 'Bạn có chắc chắn muốn xóa?',
     'end' => 'Kết thúc',
+    'remind' => 'Thư nhắc nhở học tập',
+    'end_mail' => 'Cảm ơn',
+    'let_study' => 'Xin chào <b>:name</b><br>Đã lâu rồi không thấy bạn tham gia các khóa học trên F8, không biết bạn có gặp vấn đề gì với hệ thống hay không? Nếu bạn đang gặp khó khăn với các bài giảng hoặc bài tập thì có thể feedback cho chúng tôi. Chúng tôi sẽ cố gắng giải đáp trong thời gian sớm nhất.',
+    'enter_name' => 'Họ và tên',
+    'enter_password' => 'Mật khẩu',
+    'account_exist' => 'Bạn đã có tài khoản?',
+    'chat' => 'Tin nhắn',
 ];

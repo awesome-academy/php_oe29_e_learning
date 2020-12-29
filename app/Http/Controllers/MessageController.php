@@ -39,6 +39,7 @@ class MessageController extends Controller
             'message' => $message,
             'is_read' => config('message.unread'),
         ]);
+        $this->messageRepo->updateWithWhere([['from_id', $toId], ['to_id', $fromId]], ['is_read' => config('message.read')]);
         $data = [
             'from_id' => $fromId, 
             'to_id' => $toId, 
