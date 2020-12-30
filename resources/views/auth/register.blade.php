@@ -12,7 +12,7 @@
                             <div class="auth-img-container">
                                 <img src="{{ asset(config('title.auth_facebook_logo')) }}" alt="">
                             </div>
-                            <span class="with-before">@lang('label.f8_register_google')</span>
+                            <span class="with-before">@lang('label.f8_register_facebook')</span>
                         </button>
                     </li>
                     <li>
@@ -20,7 +20,7 @@
                             <div class="auth-img-container">
                                 <img src="{{ asset(config('title.auth_google_logo')) }}" alt="">
                             </div>
-                            <span class="with-before">@lang('label.f8_register_facebook')</span>
+                            <span class="with-before">@lang('label.f8_register_google')</span>
                         </button>
                     </li>
                     <p class="auth-sub-heading space">@lang('label.f8_trick_register')</p>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="text-input-container">
                                 <label for="password">@lang('label.password')</label>
-                                <input type="password" class="auth-input" id="password" placeholder="@lang('enter_password')" name="password">
+                                <input type="password" class="auth-input" id="password" placeholder="@lang('label.enter_password')" name="password">
                                 @error('password')
                                     <span role="alert">
                                         <strong>{{ $message }}</strong>
@@ -77,7 +77,7 @@
         </section>
         @if (Route::has('login'))
         <section class="other-action">
-            <p>@lang('label.accout_exist')</p>
+            <p>@lang('label.account_exist')</p>
             <a href="{{ route('login') }}">@lang('label.login')</a>
         </section>
         @endif

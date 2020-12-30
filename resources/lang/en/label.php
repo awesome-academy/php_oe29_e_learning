@@ -198,4 +198,11 @@ return [
     'confirm_modal' => 'Warning',
     'confirm_delete' => 'Are you sure about that?',
     'end' => 'End session',
+    'remind' => 'Study reminder letter',
+    'end_mail' => 'Thanks',
+    'let_study' => 'Hello <b>:name</b><br>Long time no see you taking courses on F8, do not know if you have problems with the system or not? If you are having difficulty with the lectures or exercises, please give us feedback. We will try to answer as soon as possible.',
+    'enter_name' => 'Your name',
+    'enter_password' => 'Your password',
+    'account_exist' => 'Already have an account?',
+    'chat' => 'Chat',
 ];
